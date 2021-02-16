@@ -16,6 +16,17 @@
 		02091ED425DC5C5B009F2FFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02091ED225DC5C5B009F2FFC /* Main.storyboard */; };
 		02091ED625DC5C5D009F2FFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02091ED525DC5C5D009F2FFC /* Assets.xcassets */; };
 		02091ED925DC5C5D009F2FFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02091ED725DC5C5D009F2FFC /* LaunchScreen.storyboard */; };
+		02091EEA25DC6256009F2FFC /* SFBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091EE825DC6256009F2FFC /* SFBottomSheetViewController.swift */; };
+		02091EEB25DC6256009F2FFC /* SFBottomSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02091EE925DC6256009F2FFC /* SFBottomSheetViewController.xib */; };
+		02091EFD25DC62C3009F2FFC /* PopupErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091EF025DC62C2009F2FFC /* PopupErrorViewModel.swift */; };
+		02091EFE25DC62C3009F2FFC /* PopupErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091EF125DC62C2009F2FFC /* PopupErrorViewController.swift */; };
+		02091EFF25DC62C3009F2FFC /* PopupErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02091EF225DC62C2009F2FFC /* PopupErrorViewController.xib */; };
+		02091F0025DC62C3009F2FFC /* SendACheckAccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02091EF625DC62C3009F2FFC /* SendACheckAccountTableViewCell.xib */; };
+		02091F0125DC62C3009F2FFC /* SendACheckAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091EF725DC62C3009F2FFC /* SendACheckAccountTableViewCell.swift */; };
+		02091F0225DC62C3009F2FFC /* BottomSheetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02091EF925DC62C3009F2FFC /* BottomSheetTableViewCell.xib */; };
+		02091F0325DC62C3009F2FFC /* BottomSheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091EFA25DC62C3009F2FFC /* BottomSheetTableViewCell.swift */; };
+		02091F0425DC62C3009F2FFC /* BottomSheetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091EFB25DC62C3009F2FFC /* BottomSheetListViewModel.swift */; };
+		02091F0525DC62C3009F2FFC /* BottomSheetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091EFC25DC62C3009F2FFC /* BottomSheetListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +54,17 @@
 		02091ED525DC5C5D009F2FFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02091ED825DC5C5D009F2FFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02091EDA25DC5C5D009F2FFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02091EE825DC6256009F2FFC /* SFBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFBottomSheetViewController.swift; sourceTree = "<group>"; };
+		02091EE925DC6256009F2FFC /* SFBottomSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SFBottomSheetViewController.xib; sourceTree = "<group>"; };
+		02091EF025DC62C2009F2FFC /* PopupErrorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupErrorViewModel.swift; sourceTree = "<group>"; };
+		02091EF125DC62C2009F2FFC /* PopupErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupErrorViewController.swift; sourceTree = "<group>"; };
+		02091EF225DC62C2009F2FFC /* PopupErrorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupErrorViewController.xib; sourceTree = "<group>"; };
+		02091EF625DC62C3009F2FFC /* SendACheckAccountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendACheckAccountTableViewCell.xib; sourceTree = "<group>"; };
+		02091EF725DC62C3009F2FFC /* SendACheckAccountTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendACheckAccountTableViewCell.swift; sourceTree = "<group>"; };
+		02091EF925DC62C3009F2FFC /* BottomSheetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomSheetTableViewCell.xib; sourceTree = "<group>"; };
+		02091EFA25DC62C3009F2FFC /* BottomSheetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetTableViewCell.swift; sourceTree = "<group>"; };
+		02091EFB25DC62C3009F2FFC /* BottomSheetListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetListViewModel.swift; sourceTree = "<group>"; };
+		02091EFC25DC62C3009F2FFC /* BottomSheetListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +118,8 @@
 			children = (
 				02091EAD25DC5B80009F2FFC /* SFBottomSheet.h */,
 				02091EAE25DC5B80009F2FFC /* Info.plist */,
+				02091EE825DC6256009F2FFC /* SFBottomSheetViewController.swift */,
+				02091EE925DC6256009F2FFC /* SFBottomSheetViewController.xib */,
 			);
 			path = SFBottomSheet;
 			sourceTree = "<group>";
@@ -112,6 +136,8 @@
 		02091ECB25DC5C5B009F2FFC /* SFBottomSheetDemo */ = {
 			isa = PBXGroup;
 			children = (
+				02091EF325DC62C3009F2FFC /* BottomSheetContainerViews */,
+				02091EEF25DC62C2009F2FFC /* PopupErrorContainer */,
 				02091ECC25DC5C5B009F2FFC /* AppDelegate.swift */,
 				02091ECE25DC5C5B009F2FFC /* SceneDelegate.swift */,
 				02091ED025DC5C5B009F2FFC /* ViewController.swift */,
@@ -121,6 +147,53 @@
 				02091EDA25DC5C5D009F2FFC /* Info.plist */,
 			);
 			path = SFBottomSheetDemo;
+			sourceTree = "<group>";
+		};
+		02091EEF25DC62C2009F2FFC /* PopupErrorContainer */ = {
+			isa = PBXGroup;
+			children = (
+				02091EF025DC62C2009F2FFC /* PopupErrorViewModel.swift */,
+				02091EF125DC62C2009F2FFC /* PopupErrorViewController.swift */,
+				02091EF225DC62C2009F2FFC /* PopupErrorViewController.xib */,
+			);
+			path = PopupErrorContainer;
+			sourceTree = "<group>";
+		};
+		02091EF325DC62C3009F2FFC /* BottomSheetContainerViews */ = {
+			isa = PBXGroup;
+			children = (
+				02091EF425DC62C3009F2FFC /* Cells */,
+				02091EFB25DC62C3009F2FFC /* BottomSheetListViewModel.swift */,
+				02091EFC25DC62C3009F2FFC /* BottomSheetListViewController.swift */,
+			);
+			path = BottomSheetContainerViews;
+			sourceTree = "<group>";
+		};
+		02091EF425DC62C3009F2FFC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				02091EF525DC62C3009F2FFC /* SendACheckAccountTableViewCell */,
+				02091EF825DC62C3009F2FFC /* BottomSheetTableViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		02091EF525DC62C3009F2FFC /* SendACheckAccountTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				02091EF625DC62C3009F2FFC /* SendACheckAccountTableViewCell.xib */,
+				02091EF725DC62C3009F2FFC /* SendACheckAccountTableViewCell.swift */,
+			);
+			path = SendACheckAccountTableViewCell;
+			sourceTree = "<group>";
+		};
+		02091EF825DC62C3009F2FFC /* BottomSheetTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				02091EF925DC62C3009F2FFC /* BottomSheetTableViewCell.xib */,
+				02091EFA25DC62C3009F2FFC /* BottomSheetTableViewCell.swift */,
+			);
+			path = BottomSheetTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +274,7 @@
 				TargetAttributes = {
 					02091EA925DC5B80009F2FFC = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
 					};
 					02091EB225DC5B80009F2FFC = {
 						CreatedOnToolsVersion = 12.3;
@@ -235,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02091EEB25DC6256009F2FFC /* SFBottomSheetViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,8 +324,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02091F0225DC62C3009F2FFC /* BottomSheetTableViewCell.xib in Resources */,
+				02091F0025DC62C3009F2FFC /* SendACheckAccountTableViewCell.xib in Resources */,
 				02091ED925DC5C5D009F2FFC /* LaunchScreen.storyboard in Resources */,
 				02091ED625DC5C5D009F2FFC /* Assets.xcassets in Resources */,
+				02091EFF25DC62C3009F2FFC /* PopupErrorViewController.xib in Resources */,
 				02091ED425DC5C5B009F2FFC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02091EEA25DC6256009F2FFC /* SFBottomSheetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +358,13 @@
 			files = (
 				02091ED125DC5C5B009F2FFC /* ViewController.swift in Sources */,
 				02091ECD25DC5C5B009F2FFC /* AppDelegate.swift in Sources */,
+				02091F0325DC62C3009F2FFC /* BottomSheetTableViewCell.swift in Sources */,
+				02091F0125DC62C3009F2FFC /* SendACheckAccountTableViewCell.swift in Sources */,
+				02091EFD25DC62C3009F2FFC /* PopupErrorViewModel.swift in Sources */,
 				02091ECF25DC5C5B009F2FFC /* SceneDelegate.swift in Sources */,
+				02091F0525DC62C3009F2FFC /* BottomSheetListViewController.swift in Sources */,
+				02091EFE25DC62C3009F2FFC /* PopupErrorViewController.swift in Sources */,
+				02091F0425DC62C3009F2FFC /* BottomSheetListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +523,7 @@
 		02091EBF25DC5B80009F2FFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = UWBDU93DZY;
@@ -454,6 +540,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.scalefocus.SFBottomSheet;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -462,6 +549,7 @@
 		02091EC025DC5B80009F2FFC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = UWBDU93DZY;
@@ -486,6 +574,7 @@
 		02091EC225DC5B80009F2FFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UWBDU93DZY;
 				INFOPLIST_FILE = SFBottomSheetTests/Info.plist;
@@ -504,6 +593,7 @@
 		02091EC325DC5B80009F2FFC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UWBDU93DZY;
 				INFOPLIST_FILE = SFBottomSheetTests/Info.plist;
