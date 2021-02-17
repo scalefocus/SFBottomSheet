@@ -13,8 +13,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    private func openBottonSheet(with child: SFBottomSheetChildControllerProtocol) {
+    private func openBottonSheet(with child: SFBottomSheetChildControllerProtocol, configuration: SFBottomSheetConfigurable? = nil) {
         guard let bottomSheet = SFBottomSheetViewController.createScene(child: child,
+                                                                        configuration: configuration,
                                                                         didFinishWithoutSelection: nil) else { return }
 
         bottomSheet.modalPresentationStyle = .overFullScreen
@@ -41,7 +42,11 @@ class ViewController: UIViewController {
                                                                                icon: .product,
                                                                                button: .title(Constants.PopupError.buttonTitle)))
         else { return }
-        openBottonSheet(with: child)
+        var configuration = SFBottomSheetConfigurator()
+        configuration.draggableContainerBottomConstraint = -20
+        configuration.draggableBackgroundColor = .black
+        
+        openBottonSheet(with: child, configuration: configuration)
     }
     
 }

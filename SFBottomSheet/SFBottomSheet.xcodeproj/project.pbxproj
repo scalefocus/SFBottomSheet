@@ -11,7 +11,6 @@
 		02091EB925DC5B80009F2FFC /* SFBottomSheetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091EB825DC5B80009F2FFC /* SFBottomSheetTests.swift */; };
 		02091EBB25DC5B80009F2FFC /* SFBottomSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 02091EAD25DC5B80009F2FFC /* SFBottomSheet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02091ECD25DC5C5B009F2FFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091ECC25DC5C5B009F2FFC /* AppDelegate.swift */; };
-		02091ECF25DC5C5B009F2FFC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091ECE25DC5C5B009F2FFC /* SceneDelegate.swift */; };
 		02091ED125DC5C5B009F2FFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091ED025DC5C5B009F2FFC /* ViewController.swift */; };
 		02091ED425DC5C5B009F2FFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02091ED225DC5C5B009F2FFC /* Main.storyboard */; };
 		02091ED625DC5C5D009F2FFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02091ED525DC5C5D009F2FFC /* Assets.xcassets */; };
@@ -23,9 +22,6 @@
 		02091EFF25DC62C3009F2FFC /* PopupErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02091EF225DC62C2009F2FFC /* PopupErrorViewController.xib */; };
 		02091F0425DC62C3009F2FFC /* SFBottomSheetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091EFB25DC62C3009F2FFC /* SFBottomSheetListViewModel.swift */; };
 		02091F0525DC62C3009F2FFC /* SFBottomSheetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091EFC25DC62C3009F2FFC /* SFBottomSheetListViewController.swift */; };
-		02091F1525DC70D1009F2FFC /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091F1325DC70D1009F2FFC /* TestViewController.swift */; };
-		02091F1625DC70D1009F2FFC /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02091F1425DC70D1009F2FFC /* TestViewController.xib */; };
-		02091F1D25DC7185009F2FFC /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091F1325DC70D1009F2FFC /* TestViewController.swift */; };
 		02091F2B25DC726B009F2FFC /* SFBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091EE825DC6256009F2FFC /* SFBottomSheetViewController.swift */; };
 		02091F2F25DC726F009F2FFC /* SFBottomSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02091EE925DC6256009F2FFC /* SFBottomSheetViewController.xib */; };
 		027058FC25DD8789005E2ECE /* SFBottomSheetConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027058FB25DD8789005E2ECE /* SFBottomSheetConfigurator.swift */; };
@@ -55,7 +51,6 @@
 		02091EBA25DC5B80009F2FFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02091ECA25DC5C5B009F2FFC /* SFBottomSheetDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFBottomSheetDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02091ECC25DC5C5B009F2FFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		02091ECE25DC5C5B009F2FFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		02091ED025DC5C5B009F2FFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		02091ED325DC5C5B009F2FFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		02091ED525DC5C5D009F2FFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,8 +63,6 @@
 		02091EF225DC62C2009F2FFC /* PopupErrorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupErrorViewController.xib; sourceTree = "<group>"; };
 		02091EFB25DC62C3009F2FFC /* SFBottomSheetListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFBottomSheetListViewModel.swift; sourceTree = "<group>"; };
 		02091EFC25DC62C3009F2FFC /* SFBottomSheetListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFBottomSheetListViewController.swift; sourceTree = "<group>"; };
-		02091F1325DC70D1009F2FFC /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		02091F1425DC70D1009F2FFC /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		027058FB25DD8789005E2ECE /* SFBottomSheetConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFBottomSheetConfigurator.swift; sourceTree = "<group>"; };
 		0270591625DDA6EE005E2ECE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0270593E25DDAEFF005E2ECE /* SFBottomSheetListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SFBottomSheetListViewController.xib; sourceTree = "<group>"; };
@@ -149,7 +142,6 @@
 			children = (
 				02091F1225DC70BB009F2FFC /* Childs */,
 				02091ECC25DC5C5B009F2FFC /* AppDelegate.swift */,
-				02091ECE25DC5C5B009F2FFC /* SceneDelegate.swift */,
 				02091ED025DC5C5B009F2FFC /* ViewController.swift */,
 				02091ED225DC5C5B009F2FFC /* Main.storyboard */,
 				02091ED525DC5C5D009F2FFC /* Assets.xcassets */,
@@ -203,8 +195,6 @@
 			children = (
 				02091EEF25DC62C2009F2FFC /* PopupErrorContainer */,
 				02091EF325DC62C3009F2FFC /* BottomSheetListViews */,
-				02091F1325DC70D1009F2FFC /* TestViewController.swift */,
-				02091F1425DC70D1009F2FFC /* TestViewController.xib */,
 			);
 			path = Childs;
 			sourceTree = "<group>";
@@ -348,7 +338,6 @@
 				02091ED925DC5C5D009F2FFC /* LaunchScreen.storyboard in Resources */,
 				02091ED625DC5C5D009F2FFC /* Assets.xcassets in Resources */,
 				02091EFF25DC62C3009F2FFC /* PopupErrorViewController.xib in Resources */,
-				02091F1625DC70D1009F2FFC /* TestViewController.xib in Resources */,
 				02091F2F25DC726F009F2FFC /* SFBottomSheetViewController.xib in Resources */,
 				0270595225DDC424005E2ECE /* SFBottomSheetListTableViewCell.xib in Resources */,
 				0270593F25DDAEFF005E2ECE /* SFBottomSheetListViewController.xib in Resources */,
@@ -363,7 +352,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02091F1D25DC7185009F2FFC /* TestViewController.swift in Sources */,
 				02091EEA25DC6256009F2FFC /* SFBottomSheetViewController.swift in Sources */,
 				027058FC25DD8789005E2ECE /* SFBottomSheetConfigurator.swift in Sources */,
 			);
@@ -381,13 +369,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02091F1525DC70D1009F2FFC /* TestViewController.swift in Sources */,
 				02091ED125DC5C5B009F2FFC /* ViewController.swift in Sources */,
 				02091ECD25DC5C5B009F2FFC /* AppDelegate.swift in Sources */,
 				02091F2B25DC726B009F2FFC /* SFBottomSheetViewController.swift in Sources */,
 				02091EFD25DC62C3009F2FFC /* PopupErrorViewModel.swift in Sources */,
 				0270591725DDA6EE005E2ECE /* Constants.swift in Sources */,
-				02091ECF25DC5C5B009F2FFC /* SceneDelegate.swift in Sources */,
 				0270590025DD8806005E2ECE /* SFBottomSheetConfigurator.swift in Sources */,
 				02091F0525DC62C3009F2FFC /* SFBottomSheetListViewController.swift in Sources */,
 				02091EFE25DC62C3009F2FFC /* PopupErrorViewController.swift in Sources */,
@@ -560,6 +546,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SFBottomSheet/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -568,9 +555,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.scalefocus.SFBottomSheet;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -586,6 +574,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SFBottomSheet/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -594,8 +583,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.scalefocus.SFBottomSheet;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -645,6 +635,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UWBDU93DZY;
 				INFOPLIST_FILE = SFBottomSheetDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -652,7 +643,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.scalefocus.SFBottomSheetDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -664,6 +655,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UWBDU93DZY;
 				INFOPLIST_FILE = SFBottomSheetDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -671,7 +663,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.scalefocus.SFBottomSheetDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

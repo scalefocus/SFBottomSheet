@@ -31,10 +31,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40124678940000003" colorSpace="custom" customColorSpace="calibratedRGB"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aV3-ok-mXT">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aV3-ok-mXT">
                     <rect key="frame" x="0.0" y="768" width="414" height="128"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LiR-UF-ohY">
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LiR-UF-ohY">
                             <rect key="frame" x="16" y="0.0" width="382" height="128"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>

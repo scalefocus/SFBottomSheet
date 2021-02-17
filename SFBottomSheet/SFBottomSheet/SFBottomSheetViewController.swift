@@ -141,11 +141,11 @@ class SFBottomSheetViewController: UIViewController {
 
 extension SFBottomSheetViewController {
     static func createScene(child: SFBottomSheetChildControllerProtocol?,
-                            configuration: SFBottomSheetConfigurable? = SFBottomSheetConfigurator(),
+                            configuration: SFBottomSheetConfigurable?,
                             didFinishWithoutSelection: (() -> Void)?) -> SFBottomSheetViewController? {
         let controller = SFBottomSheetViewController()
         controller.childViewController = child
-        controller.configurator = configuration
+        controller.configurator = configuration ?? SFBottomSheetConfigurator()
         controller.didFinishWithoutSelection = didFinishWithoutSelection
         return controller
     }
