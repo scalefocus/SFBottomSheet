@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,7 +13,12 @@
                 <outlet property="containerView" destination="aV3-ok-mXT" id="zGW-xb-xXR"/>
                 <outlet property="containerViewHeightConstraint" destination="9z0-dg-4Y6" id="kuC-g7-kQp"/>
                 <outlet property="contentView" destination="ePh-TM-795" id="cAb-g0-4N7"/>
-                <outlet property="draggableView" destination="5c7-VZ-Rke" id="JI1-YM-ZKb"/>
+                <outlet property="draggableContainerBottomConstraint" destination="vTG-td-wgS" id="ysI-M8-kzq"/>
+                <outlet property="draggableContainerHeightConstraint" destination="7fK-Ow-2V6" id="SrW-jc-emC"/>
+                <outlet property="draggableContainerView" destination="5c7-VZ-Rke" id="ujX-uJ-2Ir"/>
+                <outlet property="draggableHeightConstraint" destination="weW-gu-B8L" id="3v1-5N-LW3"/>
+                <outlet property="draggableView" destination="UvT-Ds-4vz" id="DC0-xF-bwY"/>
+                <outlet property="draggableWidthConstraint" destination="mbq-zg-89P" id="WMy-cZ-l1Y"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,17 +29,17 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePh-TM-795">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40124678940000003" colorSpace="custom" customColorSpace="calibratedRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aV3-ok-mXT">
                     <rect key="frame" x="0.0" y="768" width="414" height="128"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LiR-UF-ohY">
                             <rect key="frame" x="16" y="0.0" width="382" height="128"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="LiR-UF-ohY" firstAttribute="top" secondItem="aV3-ok-mXT" secondAttribute="top" id="5RM-iZ-uh3"/>
                         <constraint firstAttribute="height" constant="128" id="9z0-dg-4Y6"/>
@@ -45,12 +49,13 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5c7-VZ-Rke">
-                    <rect key="frame" x="168" y="741" width="78" height="15"/>
+                    <rect key="frame" x="0.0" y="741" width="414" height="15"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UvT-Ds-4vz">
-                            <rect key="frame" x="0.0" y="5" width="78" height="5"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <rect key="frame" x="186.5" y="5" width="41" height="5"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstAttribute="width" constant="41" id="mbq-zg-89P"/>
                                 <constraint firstAttribute="height" constant="5" id="weW-gu-B8L"/>
                             </constraints>
                         </view>
@@ -58,10 +63,8 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="7fK-Ow-2V6"/>
-                        <constraint firstAttribute="trailing" secondItem="UvT-Ds-4vz" secondAttribute="trailing" id="89m-xt-dk3"/>
                         <constraint firstItem="UvT-Ds-4vz" firstAttribute="centerY" secondItem="5c7-VZ-Rke" secondAttribute="centerY" id="KGh-LB-LSb"/>
-                        <constraint firstItem="UvT-Ds-4vz" firstAttribute="leading" secondItem="5c7-VZ-Rke" secondAttribute="leading" id="WFK-7X-nCR"/>
-                        <constraint firstAttribute="width" constant="78" id="xNh-ut-2nu"/>
+                        <constraint firstItem="UvT-Ds-4vz" firstAttribute="centerX" secondItem="5c7-VZ-Rke" secondAttribute="centerX" id="cdc-IM-4tt"/>
                     </constraints>
                 </view>
             </subviews>
@@ -74,16 +77,13 @@
                 <constraint firstItem="ePh-TM-795" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="QE6-M5-PUo"/>
                 <constraint firstItem="aV3-ok-mXT" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Xfi-gq-U9h"/>
                 <constraint firstAttribute="bottom" secondItem="ePh-TM-795" secondAttribute="bottom" id="Xhj-ab-u6q"/>
+                <constraint firstItem="5c7-VZ-Rke" firstAttribute="trailing" secondItem="aV3-ok-mXT" secondAttribute="trailing" id="bpd-vE-1QS"/>
                 <constraint firstItem="aV3-ok-mXT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kGF-fQ-FGX"/>
                 <constraint firstItem="ePh-TM-795" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kpe-cZ-q6f"/>
+                <constraint firstItem="5c7-VZ-Rke" firstAttribute="leading" secondItem="aV3-ok-mXT" secondAttribute="leading" id="ppr-JU-JBL"/>
                 <constraint firstItem="LiR-UF-ohY" firstAttribute="top" secondItem="5c7-VZ-Rke" secondAttribute="bottom" constant="12" id="vTG-td-wgS"/>
             </constraints>
             <point key="canvasLocation" x="132" y="132"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

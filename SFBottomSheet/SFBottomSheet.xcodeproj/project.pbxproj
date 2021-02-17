@@ -21,12 +21,19 @@
 		02091EFD25DC62C3009F2FFC /* PopupErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091EF025DC62C2009F2FFC /* PopupErrorViewModel.swift */; };
 		02091EFE25DC62C3009F2FFC /* PopupErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091EF125DC62C2009F2FFC /* PopupErrorViewController.swift */; };
 		02091EFF25DC62C3009F2FFC /* PopupErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02091EF225DC62C2009F2FFC /* PopupErrorViewController.xib */; };
-		02091F0025DC62C3009F2FFC /* SendACheckAccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02091EF625DC62C3009F2FFC /* SendACheckAccountTableViewCell.xib */; };
-		02091F0125DC62C3009F2FFC /* SendACheckAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091EF725DC62C3009F2FFC /* SendACheckAccountTableViewCell.swift */; };
-		02091F0225DC62C3009F2FFC /* BottomSheetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02091EF925DC62C3009F2FFC /* BottomSheetTableViewCell.xib */; };
-		02091F0325DC62C3009F2FFC /* BottomSheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091EFA25DC62C3009F2FFC /* BottomSheetTableViewCell.swift */; };
-		02091F0425DC62C3009F2FFC /* BottomSheetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091EFB25DC62C3009F2FFC /* BottomSheetListViewModel.swift */; };
-		02091F0525DC62C3009F2FFC /* BottomSheetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091EFC25DC62C3009F2FFC /* BottomSheetListViewController.swift */; };
+		02091F0225DC62C3009F2FFC /* SFBottomSheetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02091EF925DC62C3009F2FFC /* SFBottomSheetTableViewCell.xib */; };
+		02091F0325DC62C3009F2FFC /* SFBottomSheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091EFA25DC62C3009F2FFC /* SFBottomSheetTableViewCell.swift */; };
+		02091F0425DC62C3009F2FFC /* SFBottomSheetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091EFB25DC62C3009F2FFC /* SFBottomSheetListViewModel.swift */; };
+		02091F0525DC62C3009F2FFC /* SFBottomSheetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091EFC25DC62C3009F2FFC /* SFBottomSheetListViewController.swift */; };
+		02091F1525DC70D1009F2FFC /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091F1325DC70D1009F2FFC /* TestViewController.swift */; };
+		02091F1625DC70D1009F2FFC /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02091F1425DC70D1009F2FFC /* TestViewController.xib */; };
+		02091F1D25DC7185009F2FFC /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091F1325DC70D1009F2FFC /* TestViewController.swift */; };
+		02091F2B25DC726B009F2FFC /* SFBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091EE825DC6256009F2FFC /* SFBottomSheetViewController.swift */; };
+		02091F2F25DC726F009F2FFC /* SFBottomSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02091EE925DC6256009F2FFC /* SFBottomSheetViewController.xib */; };
+		027058FC25DD8789005E2ECE /* SFBottomSheetConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027058FB25DD8789005E2ECE /* SFBottomSheetConfigurator.swift */; };
+		0270590025DD8806005E2ECE /* SFBottomSheetConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027058FB25DD8789005E2ECE /* SFBottomSheetConfigurator.swift */; };
+		0270591725DDA6EE005E2ECE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0270591625DDA6EE005E2ECE /* Constants.swift */; };
+		0270593F25DDAEFF005E2ECE /* SFBottomSheetListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0270593E25DDAEFF005E2ECE /* SFBottomSheetListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,12 +66,15 @@
 		02091EF025DC62C2009F2FFC /* PopupErrorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupErrorViewModel.swift; sourceTree = "<group>"; };
 		02091EF125DC62C2009F2FFC /* PopupErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupErrorViewController.swift; sourceTree = "<group>"; };
 		02091EF225DC62C2009F2FFC /* PopupErrorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupErrorViewController.xib; sourceTree = "<group>"; };
-		02091EF625DC62C3009F2FFC /* SendACheckAccountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendACheckAccountTableViewCell.xib; sourceTree = "<group>"; };
-		02091EF725DC62C3009F2FFC /* SendACheckAccountTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendACheckAccountTableViewCell.swift; sourceTree = "<group>"; };
-		02091EF925DC62C3009F2FFC /* BottomSheetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomSheetTableViewCell.xib; sourceTree = "<group>"; };
-		02091EFA25DC62C3009F2FFC /* BottomSheetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetTableViewCell.swift; sourceTree = "<group>"; };
-		02091EFB25DC62C3009F2FFC /* BottomSheetListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetListViewModel.swift; sourceTree = "<group>"; };
-		02091EFC25DC62C3009F2FFC /* BottomSheetListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetListViewController.swift; sourceTree = "<group>"; };
+		02091EF925DC62C3009F2FFC /* SFBottomSheetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SFBottomSheetTableViewCell.xib; sourceTree = "<group>"; };
+		02091EFA25DC62C3009F2FFC /* SFBottomSheetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFBottomSheetTableViewCell.swift; sourceTree = "<group>"; };
+		02091EFB25DC62C3009F2FFC /* SFBottomSheetListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFBottomSheetListViewModel.swift; sourceTree = "<group>"; };
+		02091EFC25DC62C3009F2FFC /* SFBottomSheetListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFBottomSheetListViewController.swift; sourceTree = "<group>"; };
+		02091F1325DC70D1009F2FFC /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		02091F1425DC70D1009F2FFC /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
+		027058FB25DD8789005E2ECE /* SFBottomSheetConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFBottomSheetConfigurator.swift; sourceTree = "<group>"; };
+		0270591625DDA6EE005E2ECE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0270593E25DDAEFF005E2ECE /* SFBottomSheetListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SFBottomSheetListViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +126,7 @@
 		02091EAC25DC5B80009F2FFC /* SFBottomSheet */ = {
 			isa = PBXGroup;
 			children = (
+				02091F3925DD116F009F2FFC /* Configuration */,
 				02091EAD25DC5B80009F2FFC /* SFBottomSheet.h */,
 				02091EAE25DC5B80009F2FFC /* Info.plist */,
 				02091EE825DC6256009F2FFC /* SFBottomSheetViewController.swift */,
@@ -136,8 +147,7 @@
 		02091ECB25DC5C5B009F2FFC /* SFBottomSheetDemo */ = {
 			isa = PBXGroup;
 			children = (
-				02091EF325DC62C3009F2FFC /* BottomSheetContainerViews */,
-				02091EEF25DC62C2009F2FFC /* PopupErrorContainer */,
+				02091F1225DC70BB009F2FFC /* Childs */,
 				02091ECC25DC5C5B009F2FFC /* AppDelegate.swift */,
 				02091ECE25DC5C5B009F2FFC /* SceneDelegate.swift */,
 				02091ED025DC5C5B009F2FFC /* ViewController.swift */,
@@ -145,6 +155,7 @@
 				02091ED525DC5C5D009F2FFC /* Assets.xcassets */,
 				02091ED725DC5C5D009F2FFC /* LaunchScreen.storyboard */,
 				02091EDA25DC5C5D009F2FFC /* Info.plist */,
+				0270591625DDA6EE005E2ECE /* Constants.swift */,
 			);
 			path = SFBottomSheetDemo;
 			sourceTree = "<group>";
@@ -159,41 +170,51 @@
 			path = PopupErrorContainer;
 			sourceTree = "<group>";
 		};
-		02091EF325DC62C3009F2FFC /* BottomSheetContainerViews */ = {
+		02091EF325DC62C3009F2FFC /* BottomSheetListViews */ = {
 			isa = PBXGroup;
 			children = (
 				02091EF425DC62C3009F2FFC /* Cells */,
-				02091EFB25DC62C3009F2FFC /* BottomSheetListViewModel.swift */,
-				02091EFC25DC62C3009F2FFC /* BottomSheetListViewController.swift */,
+				02091EFB25DC62C3009F2FFC /* SFBottomSheetListViewModel.swift */,
+				02091EFC25DC62C3009F2FFC /* SFBottomSheetListViewController.swift */,
+				0270593E25DDAEFF005E2ECE /* SFBottomSheetListViewController.xib */,
 			);
-			path = BottomSheetContainerViews;
+			path = BottomSheetListViews;
 			sourceTree = "<group>";
 		};
 		02091EF425DC62C3009F2FFC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				02091EF525DC62C3009F2FFC /* SendACheckAccountTableViewCell */,
-				02091EF825DC62C3009F2FFC /* BottomSheetTableViewCell */,
+				02091EF825DC62C3009F2FFC /* SFBottomSheetTableViewCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		02091EF525DC62C3009F2FFC /* SendACheckAccountTableViewCell */ = {
+		02091EF825DC62C3009F2FFC /* SFBottomSheetTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				02091EF625DC62C3009F2FFC /* SendACheckAccountTableViewCell.xib */,
-				02091EF725DC62C3009F2FFC /* SendACheckAccountTableViewCell.swift */,
+				02091EFA25DC62C3009F2FFC /* SFBottomSheetTableViewCell.swift */,
+				02091EF925DC62C3009F2FFC /* SFBottomSheetTableViewCell.xib */,
 			);
-			path = SendACheckAccountTableViewCell;
+			path = SFBottomSheetTableViewCell;
 			sourceTree = "<group>";
 		};
-		02091EF825DC62C3009F2FFC /* BottomSheetTableViewCell */ = {
+		02091F1225DC70BB009F2FFC /* Childs */ = {
 			isa = PBXGroup;
 			children = (
-				02091EF925DC62C3009F2FFC /* BottomSheetTableViewCell.xib */,
-				02091EFA25DC62C3009F2FFC /* BottomSheetTableViewCell.swift */,
+				02091EEF25DC62C2009F2FFC /* PopupErrorContainer */,
+				02091EF325DC62C3009F2FFC /* BottomSheetListViews */,
+				02091F1325DC70D1009F2FFC /* TestViewController.swift */,
+				02091F1425DC70D1009F2FFC /* TestViewController.xib */,
 			);
-			path = BottomSheetTableViewCell;
+			path = Childs;
+			sourceTree = "<group>";
+		};
+		02091F3925DD116F009F2FFC /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				027058FB25DD8789005E2ECE /* SFBottomSheetConfigurator.swift */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,11 +345,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02091F0225DC62C3009F2FFC /* BottomSheetTableViewCell.xib in Resources */,
-				02091F0025DC62C3009F2FFC /* SendACheckAccountTableViewCell.xib in Resources */,
+				02091F0225DC62C3009F2FFC /* SFBottomSheetTableViewCell.xib in Resources */,
 				02091ED925DC5C5D009F2FFC /* LaunchScreen.storyboard in Resources */,
 				02091ED625DC5C5D009F2FFC /* Assets.xcassets in Resources */,
 				02091EFF25DC62C3009F2FFC /* PopupErrorViewController.xib in Resources */,
+				02091F1625DC70D1009F2FFC /* TestViewController.xib in Resources */,
+				02091F2F25DC726F009F2FFC /* SFBottomSheetViewController.xib in Resources */,
+				0270593F25DDAEFF005E2ECE /* SFBottomSheetListViewController.xib in Resources */,
 				02091ED425DC5C5B009F2FFC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,7 +363,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02091F1D25DC7185009F2FFC /* TestViewController.swift in Sources */,
 				02091EEA25DC6256009F2FFC /* SFBottomSheetViewController.swift in Sources */,
+				027058FC25DD8789005E2ECE /* SFBottomSheetConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,15 +381,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02091F1525DC70D1009F2FFC /* TestViewController.swift in Sources */,
 				02091ED125DC5C5B009F2FFC /* ViewController.swift in Sources */,
 				02091ECD25DC5C5B009F2FFC /* AppDelegate.swift in Sources */,
-				02091F0325DC62C3009F2FFC /* BottomSheetTableViewCell.swift in Sources */,
-				02091F0125DC62C3009F2FFC /* SendACheckAccountTableViewCell.swift in Sources */,
+				02091F2B25DC726B009F2FFC /* SFBottomSheetViewController.swift in Sources */,
+				02091F0325DC62C3009F2FFC /* SFBottomSheetTableViewCell.swift in Sources */,
 				02091EFD25DC62C3009F2FFC /* PopupErrorViewModel.swift in Sources */,
+				0270591725DDA6EE005E2ECE /* Constants.swift in Sources */,
 				02091ECF25DC5C5B009F2FFC /* SceneDelegate.swift in Sources */,
-				02091F0525DC62C3009F2FFC /* BottomSheetListViewController.swift in Sources */,
+				0270590025DD8806005E2ECE /* SFBottomSheetConfigurator.swift in Sources */,
+				02091F0525DC62C3009F2FFC /* SFBottomSheetListViewController.swift in Sources */,
 				02091EFE25DC62C3009F2FFC /* PopupErrorViewController.swift in Sources */,
-				02091F0425DC62C3009F2FFC /* BottomSheetListViewModel.swift in Sources */,
+				02091F0425DC62C3009F2FFC /* SFBottomSheetListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol SFBottomSheetChildControllerProtocol: UIViewController {
+public protocol SFBottomSheetChildControllerProtocol: UIViewController {
     var defaultContainerHeight: CGFloat { get set }
     var minimumAvailableContainerHeight: CGFloat { get }
     var maximumAvailableHeightCoefficient: CGFloat { get }
@@ -24,32 +24,36 @@ class SFBottomSheetViewController: UIViewController {
     @IBOutlet private weak var containerView: UIView! {
         didSet {
             containerView.layer.masksToBounds = true
-            containerView.layer.cornerRadius = containerViewCornerRadius
             containerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         }
     }
+    
     @IBOutlet private weak var childContainerView: UIView!
+    @IBOutlet private weak var draggableContainerView: UIView!
     @IBOutlet private weak var draggableView: UIView!
     @IBOutlet private weak var containerViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var childContainerLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var childContainerTrailingConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var draggableContainerHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var draggableContainerBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var draggableHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var draggableWidthConstraint: NSLayoutConstraint!
     
     // MARK: - Properties
     
     private let animationDuration: TimeInterval = 0.3
     private var originalPosition: CGPoint?
     private var currentPositionTouched: CGPoint?
-    private let containerViewCornerRadius: CGFloat = 16
     private var maximumAvailableContainerHeight: CGFloat!
     private var minimumAvailableContainerHeight: CGFloat = .zero
     fileprivate var childViewController: SFBottomSheetChildControllerProtocol?
+    fileprivate var configurator: SFBottomSheetConfigurable?
     fileprivate var didFinishWithoutSelection: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addChildViewController()
-        setupScene()
         setupGestures()
+        configureScene()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,10 +70,22 @@ class SFBottomSheetViewController: UIViewController {
     
     // MARK: - Methods
     
-    private func setupScene() {
-        guard let childViewController = childViewController else { return }
-        childContainerLeadingConstraint.constant = childViewController.childContainerLeadingDefaultConstraint
-        childContainerTrailingConstraint.constant = childViewController.childContainerLeadingDefaultConstraint
+    private func configureScene() {
+        guard let configurator = configurator else { return }
+        
+        containerView.layer.cornerRadius = configurator.containerViewCornerRadius
+        
+        contentView.backgroundColor = configurator.contentViewBackgroundColor
+        
+        draggableContainerHeightConstraint.constant = configurator.draggableContainerHeightConstraint
+        draggableContainerBottomConstraint.constant = configurator.draggableContainerBottomConstraint
+        
+        draggableHeightConstraint.constant = configurator.draggableHeightConstraint
+        draggableWidthConstraint.constant = configurator.draggableWidthConstraint
+        draggableView.backgroundColor = configurator.draggableBackgroundColor
+        draggableView.layer.masksToBounds = true
+        draggableView.layer.cornerRadius = configurator.draggableCornerRadius
+        draggableView.layer.maskedCorners = configurator.draggableMaskedCorners
     }
     
     private func addChildViewController() {
@@ -84,7 +100,7 @@ class SFBottomSheetViewController: UIViewController {
         contentView.addGestureRecognizer(tapGesture)
         
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panAction))
-        draggableView.addGestureRecognizer(panGestureRecognizer)
+        draggableContainerView.addGestureRecognizer(panGestureRecognizer)
     }
     
     private func closeSceneIfNeeded() {
@@ -119,21 +135,20 @@ class SFBottomSheetViewController: UIViewController {
                            completion: { [weak self] _ in self?.closeSceneIfNeeded() })
         }
     }
-    
 }
 
 // MARK: - Scene Factory
 
-struct BottomSheetSceneConfigurator {
-    
+extension SFBottomSheetViewController {
     static func createScene(child: SFBottomSheetChildControllerProtocol?,
+                            configuration: SFBottomSheetConfigurable? = SFBottomSheetConfigurator(),
                             didFinishWithoutSelection: (() -> Void)?) -> SFBottomSheetViewController? {
         let controller = SFBottomSheetViewController()
         controller.childViewController = child
+        controller.configurator = configuration
         controller.didFinishWithoutSelection = didFinishWithoutSelection
         return controller
     }
-    
 }
 
 extension UIView {
