@@ -9,8 +9,9 @@ import UIKit
 
 protocol SFBottomSheetListViewModelProtocol {
     
+    var dataSource: [SFBottomSheetTableViewCellModel] { get }
+    
     func numberOfCellsInSection(_ section: Int) -> Int
-    func cellData(for index: Int) -> SFBottomSheetTableViewCellModel?
     
 }
 
@@ -38,10 +39,10 @@ class SFBottomSheetListViewController: UIViewController, SFBottomSheetChildContr
     }
 
     func getContainerHeight(_ maximumAvailableContainerHeight: CGFloat) -> CGFloat {
-        let contentHeight = tableView.contentSize.height
+        let contentHeight = CGFloat(viewModel.dataSource.count) * defaultRowHeight
         let eligibleCellCounts = Int(maximumAvailableContainerHeight / defaultRowHeight)
         let eligibleContainerHeight = defaultRowHeight * CGFloat(eligibleCellCounts)
-        defaultContainerHeight = min(eligibleContainerHeight, tableView.contentSize.height)
+        defaultContainerHeight = min(eligibleContainerHeight, contentHeight)
         if defaultContainerHeight == contentHeight {
             tableView.isScrollEnabled = false
         }
@@ -49,14 +50,9 @@ class SFBottomSheetListViewController: UIViewController, SFBottomSheetChildContr
     }
 
     private func setupTableView() {
-        tableView.register(UINib(nibName: "\(SFBottomSheetTableViewCell.self)", bundle: nil),
-                           forCellReuseIdentifier: "\(SFBottomSheetTableViewCell.self)")
-        
-        setupTableViewHeight()
-    }
-
-    private func setupTableViewHeight() {
-        tableView.reloadData()
+        tableView.register(UINib(nibName: "\(SFBottomSheetListTableViewCell.self)", bundle: nil),
+                           forCellReuseIdentifier: "\(SFBottomSheetListTableViewCell.self)")
+        tableView.backgroundColor = .white
     }
 
 }
@@ -66,8 +62,9 @@ class SFBottomSheetListViewController: UIViewController, SFBottomSheetChildContr
 extension SFBottomSheetListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let selectedModel = viewModel.cellData(for: indexPath.row) else { return }
-        print(selectedModel)
+        guard viewModel.dataSource.indices.indices.contains(indexPath.row) else { return }
+        print(viewModel.dataSource[indexPath.row])
+        dismiss(animated: true)
     }
 
 }
@@ -82,10 +79,9 @@ extension SFBottomSheetListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
-            let cell = tableView.dequeueReusableCell(withIdentifier: "\(SFBottomSheetTableViewCell.self)", for: indexPath) as? SFBottomSheetTableViewCell,
-            let cellModel = viewModel.cellData(for: indexPath.row)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "\(SFBottomSheetListTableViewCell.self)", for: indexPath) as? SFBottomSheetListTableViewCell
         else { return UITableViewCell() }
-        cell.configureWith(cellModel)
+        cell.configureWith(viewModel.dataSource[indexPath.row])
         return cell
     }
 

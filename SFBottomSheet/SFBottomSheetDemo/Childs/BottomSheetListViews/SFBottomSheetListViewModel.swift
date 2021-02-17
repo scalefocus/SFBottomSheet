@@ -11,24 +11,24 @@ class SFBottomSheetListViewModel: SFBottomSheetListViewModelProtocol {
     
     // MARK: - Properties
     
-    private var data: [SFBottomSheetTableViewCellModel] = []
+    var dataSource: [SFBottomSheetTableViewCellModel] = []
     
     init() {
         setupData()
     }
 
     func numberOfCellsInSection(_ section: Int) -> Int {
-        return data.count
+        return dataSource.count
     }
     
     func cellData(for index: Int) -> SFBottomSheetTableViewCellModel? {
-        guard data.indices.contains(index) else { return nil}
-        return data[index]
+        guard dataSource.indices.contains(index) else { return nil}
+        return dataSource[index]
     }
     
     private func setupData() {
         for index in 0...Int.random(in: 10...20) {
-            data.append(SFBottomSheetTableViewCellModel(title: "Title \(index)", description: "Description \(index)", balance: "\(1000 + index)"))
+            dataSource.append(SFBottomSheetTableViewCellModel(title: "Title \(index)", description: "Description \(index)", balance: "\(1000 + index)"))
         }
     }
     

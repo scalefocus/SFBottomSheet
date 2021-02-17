@@ -1,14 +1,14 @@
 //
-//  SFBottomSheetTableViewCell.swift
+//  SFBottomSheetListTableViewCell.swift
 //  SFBottomSheetDemo
 //
-//  Created by Aleksandar Gyuzelov on 16.02.21.
+//  Created by Aleksandar Gyuzelov on 17.02.21.
 //
 
 import UIKit
 
-class SFBottomSheetTableViewCell: UITableViewCell {
-    
+class SFBottomSheetListTableViewCell: UITableViewCell {
+
     // MARK: - Outlets
     
     @IBOutlet private weak var titleLabel: UILabel!
@@ -34,6 +34,7 @@ class SFBottomSheetTableViewCell: UITableViewCell {
     private func sutupBalance(balance: String?) {
         balanceLabel.text = "$\(balance ?? "")"
     }
+    
 }
 
 struct SFBottomSheetTableViewCellModel {
