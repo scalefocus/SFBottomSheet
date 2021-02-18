@@ -16,23 +16,11 @@ class SFBottomSheetListTableViewCell: UITableViewCell {
     @IBOutlet private weak var iconImageView: UIImageView!
     @IBOutlet private weak var balanceLabel: UILabel!
     
-    // MARK: - Configurable
-    
     func configureWith(_ data: SFBottomSheetTableViewCellModel) {
         titleLabel.text = data.title
         descriptionLabel.text = data.description
-        sutupBalance(balance: data.balance)
-        setupIcon()
-    }
-    
-    // MARK: - Methods
-    
-    private func setupIcon() {
         iconImageView.image = UIImage(named: "banking")
-    }
-    
-    private func sutupBalance(balance: String?) {
-        balanceLabel.text = "$\(balance ?? "")"
+        balanceLabel.text = "$\(data.balance)"
     }
     
 }

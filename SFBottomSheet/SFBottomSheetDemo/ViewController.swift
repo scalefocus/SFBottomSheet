@@ -31,6 +31,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapShowCollectionView(_ sender: Any) {
+        guard let child = SFBottomSheetGridSceneConfigurator.createScene() else { return }
+        openBottonSheet(with: child)
     }
     
     @IBAction func didTapShowTextField(_ sender: Any) {

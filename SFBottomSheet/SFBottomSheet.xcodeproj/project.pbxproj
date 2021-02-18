@@ -30,6 +30,10 @@
 		0270593F25DDAEFF005E2ECE /* SFBottomSheetListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0270593E25DDAEFF005E2ECE /* SFBottomSheetListViewController.xib */; };
 		0270595125DDC424005E2ECE /* SFBottomSheetListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0270594F25DDC424005E2ECE /* SFBottomSheetListTableViewCell.swift */; };
 		0270595225DDC424005E2ECE /* SFBottomSheetListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0270595025DDC424005E2ECE /* SFBottomSheetListTableViewCell.xib */; };
+		0270597B25DE57DC005E2ECE /* SFBottomSheetGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0270597925DE57DC005E2ECE /* SFBottomSheetGridViewController.swift */; };
+		0270597C25DE57DC005E2ECE /* SFBottomSheetGridViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0270597A25DE57DC005E2ECE /* SFBottomSheetGridViewController.xib */; };
+		0270598F25DE5AC6005E2ECE /* SFBottomSheetGridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0270598D25DE5AC6005E2ECE /* SFBottomSheetGridCollectionViewCell.swift */; };
+		0270599025DE5AC6005E2ECE /* SFBottomSheetGridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0270598E25DE5AC6005E2ECE /* SFBottomSheetGridCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,10 @@
 		0270593E25DDAEFF005E2ECE /* SFBottomSheetListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SFBottomSheetListViewController.xib; sourceTree = "<group>"; };
 		0270594F25DDC424005E2ECE /* SFBottomSheetListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFBottomSheetListTableViewCell.swift; sourceTree = "<group>"; };
 		0270595025DDC424005E2ECE /* SFBottomSheetListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SFBottomSheetListTableViewCell.xib; sourceTree = "<group>"; };
+		0270597925DE57DC005E2ECE /* SFBottomSheetGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFBottomSheetGridViewController.swift; sourceTree = "<group>"; };
+		0270597A25DE57DC005E2ECE /* SFBottomSheetGridViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SFBottomSheetGridViewController.xib; sourceTree = "<group>"; };
+		0270598D25DE5AC6005E2ECE /* SFBottomSheetGridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFBottomSheetGridCollectionViewCell.swift; sourceTree = "<group>"; };
+		0270598E25DE5AC6005E2ECE /* SFBottomSheetGridCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SFBottomSheetGridCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +170,7 @@
 			path = PopupErrorContainer;
 			sourceTree = "<group>";
 		};
-		02091EF325DC62C3009F2FFC /* BottomSheetListViews */ = {
+		02091EF325DC62C3009F2FFC /* SFBottomSheetListViews */ = {
 			isa = PBXGroup;
 			children = (
 				02091EF425DC62C3009F2FFC /* Cells */,
@@ -170,7 +178,7 @@
 				02091EFC25DC62C3009F2FFC /* SFBottomSheetListViewController.swift */,
 				0270593E25DDAEFF005E2ECE /* SFBottomSheetListViewController.xib */,
 			);
-			path = BottomSheetListViews;
+			path = SFBottomSheetListViews;
 			sourceTree = "<group>";
 		};
 		02091EF425DC62C3009F2FFC /* Cells */ = {
@@ -194,7 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				02091EEF25DC62C2009F2FFC /* PopupErrorContainer */,
-				02091EF325DC62C3009F2FFC /* BottomSheetListViews */,
+				02091EF325DC62C3009F2FFC /* SFBottomSheetListViews */,
+				0270596B25DE5727005E2ECE /* SFBottomSheetGridViews */,
 			);
 			path = Childs;
 			sourceTree = "<group>";
@@ -205,6 +214,25 @@
 				027058FB25DD8789005E2ECE /* SFBottomSheetConfigurator.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		0270596B25DE5727005E2ECE /* SFBottomSheetGridViews */ = {
+			isa = PBXGroup;
+			children = (
+				0270598025DE5822005E2ECE /* SFBottomSheetGridCollectionViewCell */,
+				0270597925DE57DC005E2ECE /* SFBottomSheetGridViewController.swift */,
+				0270597A25DE57DC005E2ECE /* SFBottomSheetGridViewController.xib */,
+			);
+			path = SFBottomSheetGridViews;
+			sourceTree = "<group>";
+		};
+		0270598025DE5822005E2ECE /* SFBottomSheetGridCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0270598D25DE5AC6005E2ECE /* SFBottomSheetGridCollectionViewCell.swift */,
+				0270598E25DE5AC6005E2ECE /* SFBottomSheetGridCollectionViewCell.xib */,
+			);
+			path = SFBottomSheetGridCollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,10 +366,12 @@
 				02091ED925DC5C5D009F2FFC /* LaunchScreen.storyboard in Resources */,
 				02091ED625DC5C5D009F2FFC /* Assets.xcassets in Resources */,
 				02091EFF25DC62C3009F2FFC /* PopupErrorViewController.xib in Resources */,
+				0270599025DE5AC6005E2ECE /* SFBottomSheetGridCollectionViewCell.xib in Resources */,
 				02091F2F25DC726F009F2FFC /* SFBottomSheetViewController.xib in Resources */,
 				0270595225DDC424005E2ECE /* SFBottomSheetListTableViewCell.xib in Resources */,
 				0270593F25DDAEFF005E2ECE /* SFBottomSheetListViewController.xib in Resources */,
 				02091ED425DC5C5B009F2FFC /* Main.storyboard in Resources */,
+				0270597C25DE57DC005E2ECE /* SFBottomSheetGridViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,8 +404,10 @@
 				02091F2B25DC726B009F2FFC /* SFBottomSheetViewController.swift in Sources */,
 				02091EFD25DC62C3009F2FFC /* PopupErrorViewModel.swift in Sources */,
 				0270591725DDA6EE005E2ECE /* Constants.swift in Sources */,
+				0270597B25DE57DC005E2ECE /* SFBottomSheetGridViewController.swift in Sources */,
 				0270590025DD8806005E2ECE /* SFBottomSheetConfigurator.swift in Sources */,
 				02091F0525DC62C3009F2FFC /* SFBottomSheetListViewController.swift in Sources */,
+				0270598F25DE5AC6005E2ECE /* SFBottomSheetGridCollectionViewCell.swift in Sources */,
 				02091EFE25DC62C3009F2FFC /* PopupErrorViewController.swift in Sources */,
 				02091F0425DC62C3009F2FFC /* SFBottomSheetListViewModel.swift in Sources */,
 				0270595125DDC424005E2ECE /* SFBottomSheetListTableViewCell.swift in Sources */,
