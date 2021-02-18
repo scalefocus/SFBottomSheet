@@ -10,6 +10,8 @@ import UIKit
 
 
 class SFBottomSheetGridViewController: UIViewController, SFBottomSheetChildControllerProtocol {
+    
+    weak var delegate: SFBottomSheetChildDelegate?
       
     fileprivate var viewModel: SFBottomSheetListViewModelProtocol!
     
@@ -82,7 +84,7 @@ class SFBottomSheetGridViewController: UIViewController, SFBottomSheetChildContr
     }
     
     private func startTimer() {
-        let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(scrollAutomatically), userInfo: nil, repeats: true)
+        _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(scrollAutomatically), userInfo: nil, repeats: true)
     }
 
 }

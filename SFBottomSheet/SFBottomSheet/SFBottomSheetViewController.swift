@@ -7,13 +7,20 @@
 
 import UIKit
 
-public protocol SFBottomSheetChildControllerProtocol: UIViewController {
+protocol SFBottomSheetChildControllerProtocol: UIViewController {
+    
+    var delegate: SFBottomSheetChildDelegate? { get set }
     var defaultContainerHeight: CGFloat { get set }
     var minimumAvailableContainerHeight: CGFloat { get }
     var maximumAvailableHeightCoefficient: CGFloat { get }
     var childContainerLeadingDefaultConstraint: CGFloat { get }
     
     func getContainerHeight(_ maximumAvailableContainerHeight: CGFloat) -> CGFloat
+}
+
+protocol SFBottomSheetChildDelegate: class {
+    
+    func didChangeHeight(with height: CGFloat)
 }
 
 class SFBottomSheetViewController: UIViewController {
@@ -58,8 +65,15 @@ class SFBottomSheetViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        configureContent()
+    }
+    
+    // MARK: - Methods
+    
+    private func configureContent() {
         contentView.alpha = 1
         guard let childViewController = childViewController else { return }
+        childViewController.delegate = self
         maximumAvailableContainerHeight = view.frame.height * childViewController.maximumAvailableHeightCoefficient
         containerViewHeightConstraint.constant = childViewController.getContainerHeight(maximumAvailableContainerHeight)
         minimumAvailableContainerHeight = childViewController.minimumAvailableContainerHeight
@@ -67,8 +81,6 @@ class SFBottomSheetViewController: UIViewController {
             self?.view.layoutIfNeeded()
         }
     }
-    
-    // MARK: - Methods
     
     private func configureScene() {
         guard let configurator = configurator else { return }
@@ -134,6 +146,14 @@ class SFBottomSheetViewController: UIViewController {
                            animations: { [weak self] in self?.view.layoutIfNeeded() },
                            completion: { [weak self] _ in self?.closeSceneIfNeeded() })
         }
+    }
+}
+
+// MARK: - SFBottomSheetChildDelegate
+
+extension SFBottomSheetViewController: SFBottomSheetChildDelegate {
+    func didChangeHeight(with height: CGFloat) {
+        configureContent()
     }
 }
 

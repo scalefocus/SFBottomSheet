@@ -34,6 +34,8 @@
 		0270597C25DE57DC005E2ECE /* SFBottomSheetGridViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0270597A25DE57DC005E2ECE /* SFBottomSheetGridViewController.xib */; };
 		0270598F25DE5AC6005E2ECE /* SFBottomSheetGridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0270598D25DE5AC6005E2ECE /* SFBottomSheetGridCollectionViewCell.swift */; };
 		0270599025DE5AC6005E2ECE /* SFBottomSheetGridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0270598E25DE5AC6005E2ECE /* SFBottomSheetGridCollectionViewCell.xib */; };
+		027059AE25DE6852005E2ECE /* PopupTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027059AC25DE6852005E2ECE /* PopupTextFieldViewController.swift */; };
+		027059AF25DE6852005E2ECE /* PopupTextFieldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027059AD25DE6852005E2ECE /* PopupTextFieldViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		0270597A25DE57DC005E2ECE /* SFBottomSheetGridViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SFBottomSheetGridViewController.xib; sourceTree = "<group>"; };
 		0270598D25DE5AC6005E2ECE /* SFBottomSheetGridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFBottomSheetGridCollectionViewCell.swift; sourceTree = "<group>"; };
 		0270598E25DE5AC6005E2ECE /* SFBottomSheetGridCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SFBottomSheetGridCollectionViewCell.xib; sourceTree = "<group>"; };
+		027059AC25DE6852005E2ECE /* PopupTextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupTextFieldViewController.swift; sourceTree = "<group>"; };
+		027059AD25DE6852005E2ECE /* PopupTextFieldViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupTextFieldViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +205,7 @@
 		02091F1225DC70BB009F2FFC /* Childs */ = {
 			isa = PBXGroup;
 			children = (
+				027059AB25DE682E005E2ECE /* PopupTextFieldContainer */,
 				02091EEF25DC62C2009F2FFC /* PopupErrorContainer */,
 				02091EF325DC62C3009F2FFC /* SFBottomSheetListViews */,
 				0270596B25DE5727005E2ECE /* SFBottomSheetGridViews */,
@@ -233,6 +238,15 @@
 				0270598E25DE5AC6005E2ECE /* SFBottomSheetGridCollectionViewCell.xib */,
 			);
 			path = SFBottomSheetGridCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		027059AB25DE682E005E2ECE /* PopupTextFieldContainer */ = {
+			isa = PBXGroup;
+			children = (
+				027059AC25DE6852005E2ECE /* PopupTextFieldViewController.swift */,
+				027059AD25DE6852005E2ECE /* PopupTextFieldViewController.xib */,
+			);
+			path = PopupTextFieldContainer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				027059AF25DE6852005E2ECE /* PopupTextFieldViewController.xib in Resources */,
 				02091ED925DC5C5D009F2FFC /* LaunchScreen.storyboard in Resources */,
 				02091ED625DC5C5D009F2FFC /* Assets.xcassets in Resources */,
 				02091EFF25DC62C3009F2FFC /* PopupErrorViewController.xib in Resources */,
@@ -401,6 +416,7 @@
 			files = (
 				02091ED125DC5C5B009F2FFC /* ViewController.swift in Sources */,
 				02091ECD25DC5C5B009F2FFC /* AppDelegate.swift in Sources */,
+				027059AE25DE6852005E2ECE /* PopupTextFieldViewController.swift in Sources */,
 				02091F2B25DC726B009F2FFC /* SFBottomSheetViewController.swift in Sources */,
 				02091EFD25DC62C3009F2FFC /* PopupErrorViewModel.swift in Sources */,
 				0270591725DDA6EE005E2ECE /* Constants.swift in Sources */,

@@ -16,6 +16,8 @@ protocol SFBottomSheetListViewModelProtocol {
 }
 
 class SFBottomSheetListViewController: UIViewController, SFBottomSheetChildControllerProtocol {
+    
+    weak var delegate: SFBottomSheetChildDelegate?
 
     fileprivate var viewModel: SFBottomSheetListViewModelProtocol!
 

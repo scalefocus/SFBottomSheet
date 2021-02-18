@@ -36,6 +36,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapShowTextField(_ sender: Any) {
+        guard let child = PopupTextFieldViewController.createScene(message: PopupMessage(title: Constants.PopupError.title,
+                                                                                         message: Constants.PopupError.message,
+                                                                                         icon: .product,
+                                                                                         button: .title(Constants.PopupError.buttonTitle)))
+        else { return }
+        openBottonSheet(with: child)
     }
     
     @IBAction func didTapShowScrollView(_ sender: Any) {

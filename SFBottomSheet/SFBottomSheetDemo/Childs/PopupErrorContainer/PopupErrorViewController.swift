@@ -4,6 +4,7 @@
 //
 //  Created by Aleksandar Gyuzelov on 16.02.21.
 //
+
 import UIKit
 
 protocol PopupErrorViewМodelProtocol {
@@ -19,7 +20,8 @@ protocol PopupErrorViewМodelProtocol {
 
 class PopupErrorViewController: UIViewController, SFBottomSheetChildControllerProtocol {
     
-    
+    weak var delegate: SFBottomSheetChildDelegate?
+
     private var viewModel: PopupErrorViewМodelProtocol!
     
     // MARK: - Outlets
