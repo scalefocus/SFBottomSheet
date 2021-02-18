@@ -39,10 +39,11 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
     
     // MARK: - Properties
     
-    var defaultContainerHeight: CGFloat = 250
+    var defaultContainerHeight: CGFloat = 200
     var minimumAvailableContainerHeight: CGFloat = .zero
     var maximumAvailableHeightCoefficient: CGFloat = 0.85
     var childContainerLeadingDefaultConstraint: CGFloat = 16
+    private var initialContainerHeight: CGFloat = 200
     private var maximumHeight: CGFloat = .zero
     private var isKeyboardVisible: Bool = false
     
@@ -86,7 +87,7 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
     
     @objc open func keyboardWillHide(notification: Notification) {
         isKeyboardVisible = false
-        defaultContainerHeight = 250
+        defaultContainerHeight = initialContainerHeight
         delegate?.didChangeHeight(with: defaultContainerHeight)
         UIView.animate(withDuration: 0.5) { [weak self] in
             self?.view.layoutIfNeeded()
