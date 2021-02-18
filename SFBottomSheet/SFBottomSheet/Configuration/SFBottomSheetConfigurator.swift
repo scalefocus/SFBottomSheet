@@ -24,6 +24,7 @@ protocol SFBottomSheetConfigurable {
     var draggableHeightConstraint : CGFloat { get }
     var draggableWidthConstraint: CGFloat { get }
     var draggableBackgroundColor: UIColor { get }
+    var draggableAlpha: CGFloat { get }
     var draggableCornerRadius: CGFloat { get }
     var draggableMaskedCorners: CACornerMask { get }
     
@@ -46,6 +47,7 @@ struct SFBottomSheetConfigurator: SFBottomSheetConfigurable {
     var draggableHeightConstraint: CGFloat = 5
     var draggableWidthConstraint: CGFloat = 40
     var draggableBackgroundColor: UIColor = .white
+    var draggableAlpha: CGFloat = 1
     var draggableCornerRadius: CGFloat = 2
     var draggableMaskedCorners: CACornerMask = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner]
 }

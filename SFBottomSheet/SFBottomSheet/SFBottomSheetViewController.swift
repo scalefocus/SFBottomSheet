@@ -95,6 +95,7 @@ class SFBottomSheetViewController: UIViewController {
         draggableHeightConstraint.constant = configurator.draggableHeightConstraint
         draggableWidthConstraint.constant = configurator.draggableWidthConstraint
         draggableView.backgroundColor = configurator.draggableBackgroundColor
+        draggableView.alpha = configurator.draggableAlpha
         draggableView.layer.masksToBounds = true
         draggableView.layer.cornerRadius = configurator.draggableCornerRadius
         draggableView.layer.maskedCorners = configurator.draggableMaskedCorners

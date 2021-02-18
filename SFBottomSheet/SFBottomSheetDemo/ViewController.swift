@@ -50,11 +50,8 @@ class ViewController: UIViewController {
                                                                                icon: .product,
                                                                                button: .title(Constants.PopupError.buttonTitle)))
         else { return }
-        var configuration = SFBottomSheetConfigurator()
-        configuration.draggableContainerBottomConstraint = -20
-        configuration.draggableBackgroundColor = .black
-        
-        openBottonSheet(with: child, configuration: configuration)
+        let configurator = SFBottomSheetConfigurator()
+        openBottonSheet(with: child, configuration: configurator)
     }
     
 }
