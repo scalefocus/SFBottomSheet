@@ -87,7 +87,7 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
     @objc private func keyboardWillHide(notification: Notification) {
         isKeyboardVisible = false
         defaultContainerHeight = initialContainerHeight
-        delegate?.didChangeHeight(with: defaultContainerHeight)
+        delegate?.childDidChangeHeight(with: defaultContainerHeight)
         UIView.animate(withDuration: 0.5) { [weak self] in
             self?.view.layoutIfNeeded()
         }
@@ -96,7 +96,7 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
     private func keyboardWillShowWithHeight(_ height: CGFloat) {
         guard !isKeyboardVisible else { return }
         defaultContainerHeight += height
-        delegate?.didChangeHeight(with: defaultContainerHeight + height)
+        delegate?.childDidChangeHeight(with: defaultContainerHeight + height)
         UIView.animate(withDuration: 0.5) { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.view.layoutIfNeeded()
@@ -130,7 +130,7 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
     
     @objc private func didTapActionButton(sender: UIButton) {
         if case .title = viewModel.actionButtonType {
-            dismiss(animated: true, completion: nil)
+            delegate?.childDidRequestClose()
         }
         viewModel.didTapActionButton()
     }
@@ -138,7 +138,7 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
     // MARK: - Action
     
     @IBAction private func close(_ sender: Any) {
-        dismiss(animated: true)
+        delegate?.childDidRequestClose()
     }
     
 }

@@ -66,7 +66,7 @@ extension SFBottomSheetListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard viewModel.dataSource.indices.indices.contains(indexPath.row) else { return }
         print(viewModel.dataSource[indexPath.row])
-        dismiss(animated: true)
+        delegate?.childDidRequestClose()
     }
 
 }

@@ -91,7 +91,7 @@ class PopupErrorViewController: UIViewController, SFBottomSheetChildControllerPr
     
     @objc private func didTapActionButton(sender: UIButton) {
         if case .title = viewModel.actionButtonType {
-            dismiss(animated: true, completion: nil)
+            delegate?.childDidRequestClose()
         }
         viewModel.didTapActionButton()
     }
@@ -99,7 +99,7 @@ class PopupErrorViewController: UIViewController, SFBottomSheetChildControllerPr
     // MARK: - Action
     
     @IBAction private func close(_ sender: Any) {
-        dismiss(animated: true)
+        delegate?.childDidRequestClose()
     }
     
 }

@@ -20,7 +20,8 @@ public protocol SFBottomSheetChildControllerProtocol: UIViewController {
 
 public protocol SFBottomSheetChildDelegate: class {
     
-    func didChangeHeight(with height: CGFloat)
+    func childDidChangeHeight(with height: CGFloat)
+    func childDidRequestClose()
 }
 
 public class SFBottomSheetViewController: UIViewController {
@@ -123,8 +124,14 @@ public class SFBottomSheetViewController: UIViewController {
     }
     
     @objc private func closeScene() {
-        dismiss(animated: true)
-        didFinishWithoutSelection?()
+        containerViewHeightConstraint.constant = 0
+        UIView.animate(withDuration: animationDuration, delay: 0, options: []) {
+            self.contentView.alpha = 0
+            self.view.layoutIfNeeded()
+        } completion: { _ in
+            self.dismiss(animated: true)
+            self.didFinishWithoutSelection?()
+        }
     }
     
     @objc private func panAction(_ panGesture: UIPanGestureRecognizer) {
@@ -153,8 +160,12 @@ public class SFBottomSheetViewController: UIViewController {
 // MARK: - SFBottomSheetChildDelegate
 
 extension SFBottomSheetViewController: SFBottomSheetChildDelegate {
-    public func didChangeHeight(with height: CGFloat) {
+    public func childDidChangeHeight(with height: CGFloat) {
         configureContent()
+    }
+    
+    public func childDidRequestClose() {
+        closeScene()
     }
 }
 
