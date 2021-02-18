@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControllerProtocol {
 
     weak var delegate: SFBottomSheetChildDelegate?
@@ -35,7 +34,7 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
             actionButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
         }
     }
-    @IBOutlet weak var textFieldBottomConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var textFieldBottomConstraint: NSLayoutConstraint!
     
     // MARK: - Properties
     
@@ -67,7 +66,7 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
         view.addGestureRecognizer(gesture)
     }
     
-    @objc func autohideGestureTapped(gestureRecognizer: UIGestureRecognizer) {
+    @objc private func autohideGestureTapped(gestureRecognizer: UIGestureRecognizer) {
         let location = gestureRecognizer.location(in: nil)
         let matchingViews = view.descendants()
         .filter { $0.convert($0.bounds, to: nil).contains(location) }
@@ -79,13 +78,13 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
         }
     }
     
-    @objc open func keyboardWillShow(notification: Notification) {
+    @objc private func keyboardWillShow(notification: Notification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             keyboardWillShowWithHeight(keyboardSize.height)
         }
     }
     
-    @objc open func keyboardWillHide(notification: Notification) {
+    @objc private func keyboardWillHide(notification: Notification) {
         isKeyboardVisible = false
         defaultContainerHeight = initialContainerHeight
         delegate?.didChangeHeight(with: defaultContainerHeight)
@@ -94,7 +93,7 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
         }
     }
     
-    func keyboardWillShowWithHeight(_ height: CGFloat) {
+    private func keyboardWillShowWithHeight(_ height: CGFloat) {
         guard !isKeyboardVisible else { return }
         defaultContainerHeight += height
         delegate?.didChangeHeight(with: defaultContainerHeight + height)
@@ -138,7 +137,7 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
     
     // MARK: - Action
     
-    @IBAction func close(_ sender: Any) {
+    @IBAction private func close(_ sender: Any) {
         dismiss(animated: true)
     }
     

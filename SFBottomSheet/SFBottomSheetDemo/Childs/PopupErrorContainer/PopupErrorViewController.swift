@@ -72,11 +72,7 @@ class PopupErrorViewController: UIViewController, SFBottomSheetChildControllerPr
         scrollView.layoutIfNeeded()
         let scrollViewContentHeight = scrollView.contentSize.height + 50
         
-        if scrollViewContentHeight >= maximumHeight {
-            defaultContainerHeight = maximumHeight
-        } else {
-            defaultContainerHeight = scrollViewContentHeight
-        }
+        defaultContainerHeight = min(scrollViewContentHeight, maximumHeight)
     }
     
     private func setup() {
@@ -102,7 +98,7 @@ class PopupErrorViewController: UIViewController, SFBottomSheetChildControllerPr
     
     // MARK: - Action
     
-    @IBAction func close(_ sender: Any) {
+    @IBAction private func close(_ sender: Any) {
         dismiss(animated: true)
     }
     

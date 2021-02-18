@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol SFBottomSheetChildControllerProtocol: UIViewController {
+public protocol SFBottomSheetChildControllerProtocol: UIViewController {
     
     var delegate: SFBottomSheetChildDelegate? { get set }
     var defaultContainerHeight: CGFloat { get set }
@@ -18,12 +18,12 @@ protocol SFBottomSheetChildControllerProtocol: UIViewController {
     func getContainerHeight(_ maximumAvailableContainerHeight: CGFloat) -> CGFloat
 }
 
-protocol SFBottomSheetChildDelegate: class {
+public protocol SFBottomSheetChildDelegate: class {
     
     func didChangeHeight(with height: CGFloat)
 }
 
-class SFBottomSheetViewController: UIViewController {
+public class SFBottomSheetViewController: UIViewController {
 
     // MARK: - Outlets
     
@@ -40,10 +40,10 @@ class SFBottomSheetViewController: UIViewController {
     @IBOutlet private weak var draggableView: UIView!
     @IBOutlet private weak var containerViewHeightConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var draggableContainerHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var draggableContainerBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var draggableHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var draggableWidthConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var draggableContainerHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var draggableContainerBottomConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var draggableHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var draggableWidthConstraint: NSLayoutConstraint!
     
     // MARK: - Properties
     
@@ -56,14 +56,14 @@ class SFBottomSheetViewController: UIViewController {
     fileprivate var configurator: SFBottomSheetConfigurable?
     fileprivate var didFinishWithoutSelection: (() -> Void)?
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         addChildViewController()
         setupGestures()
         configureScene()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureContent()
     }
@@ -153,7 +153,7 @@ class SFBottomSheetViewController: UIViewController {
 // MARK: - SFBottomSheetChildDelegate
 
 extension SFBottomSheetViewController: SFBottomSheetChildDelegate {
-    func didChangeHeight(with height: CGFloat) {
+    public func didChangeHeight(with height: CGFloat) {
         configureContent()
     }
 }

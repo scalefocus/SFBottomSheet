@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class SFBottomSheetGridViewController: UIViewController, SFBottomSheetChildControllerProtocol {
     
     weak var delegate: SFBottomSheetChildDelegate?
@@ -33,7 +31,6 @@ class SFBottomSheetGridViewController: UIViewController, SFBottomSheetChildContr
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        startTimer()
     }
     
     func getContainerHeight(_ maximumAvailableContainerHeight: CGFloat) -> CGFloat {
@@ -50,43 +47,6 @@ class SFBottomSheetGridViewController: UIViewController, SFBottomSheetChildContr
     private func setupCollectionView() {
         collectionView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
     }
-    
-    @objc private func scrollToNextCell() {
-        let cellSize = CGSize(width: 180, height: 200)
-        let contentOffset = collectionView.contentOffset
-        collectionView.scrollRectToVisible(CGRect(x: contentOffset.x + cellSize.width,
-                                                  y: contentOffset.y,
-                                                  width: cellSize.width,
-                                                  height: cellSize.height),
-                                           animated: true)
-        
-    }
-    
-    @objc func scrollAutomatically(_ timer1: Timer) {
-
-        if let coll = collectionView {
-            for cell in coll.visibleCells {
-                guard let currentCellIndexPath = coll.indexPath(for: cell) else { return }
-                if currentCellIndexPath.item < viewModel.dataSource.count - 1 {
-                    let newIndexPath = IndexPath(item: currentCellIndexPath.item,
-                                                 section: currentCellIndexPath.section)
-
-                    coll.scrollToItem(at: newIndexPath, at: .right, animated: true)
-                }
-                else{
-                    let newIndexPath = IndexPath(item: 0,
-                                                 section: currentCellIndexPath.section)
-                    coll.scrollToItem(at: newIndexPath, at: .left, animated: true)
-                }
-
-            }
-        }
-    }
-    
-    private func startTimer() {
-        _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(scrollAutomatically), userInfo: nil, repeats: true)
-    }
-
 }
 
 // MARK: - UICollectionViewDelegate

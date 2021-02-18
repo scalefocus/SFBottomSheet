@@ -25,17 +25,17 @@ class ViewController: UIViewController {
     
     // Actions
     
-    @IBAction func didTapShowTableView(_ sender: Any) {
+    @IBAction private func didTapShowTableView(_ sender: Any) {
         guard let child = SFBottomSheetListSceneConfigurator.createScene() else { return }
         openBottonSheet(with: child)
     }
     
-    @IBAction func didTapShowCollectionView(_ sender: Any) {
+    @IBAction private func didTapShowCollectionView(_ sender: Any) {
         guard let child = SFBottomSheetGridSceneConfigurator.createScene() else { return }
         openBottonSheet(with: child)
     }
     
-    @IBAction func didTapShowTextField(_ sender: Any) {
+    @IBAction private func didTapShowTextField(_ sender: Any) {
         guard let child = PopupTextFieldViewController.createScene(message: PopupMessage(title: Constants.PopupError.title,
                                                                                          message: Constants.PopupError.message,
                                                                                          icon: .product,
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         openBottonSheet(with: child)
     }
     
-    @IBAction func didTapShowScrollView(_ sender: Any) {
+    @IBAction private func didTapShowScrollView(_ sender: Any) {
         guard let child = PopupErrorViewController.createScene(message: PopupMessage(title: Constants.PopupError.title,
                                                                                message: Constants.PopupError.message,
                                                                                icon: .product,

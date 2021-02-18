@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol SFBottomSheetConfigurable {
+public protocol SFBottomSheetConfigurable {
     
     // MARK: Content
     
