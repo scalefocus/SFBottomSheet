@@ -30,24 +30,24 @@ public protocol SFBottomSheetConfigurable {
     
 }
 
-struct SFBottomSheetConfigurator: SFBottomSheetConfigurable {
+public struct SFBottomSheetConfigurator: SFBottomSheetConfigurable {
     
     // MARK: Content
     
-    var contentViewBackgroundColor: UIColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+    public var contentViewBackgroundColor: UIColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
     
     // MARK: Container
     
-    var containerViewCornerRadius: CGFloat = 16
+    public var containerViewCornerRadius: CGFloat = 16
         
     // MARK: Draggable
     
-    var draggableContainerHeightConstraint: CGFloat = 30
-    var draggableContainerBottomConstraint: CGFloat = 0
-    var draggableHeightConstraint: CGFloat = 5
-    var draggableWidthConstraint: CGFloat = 40
-    var draggableBackgroundColor: UIColor = .white
-    var draggableAlpha: CGFloat = 1
-    var draggableCornerRadius: CGFloat = 2
-    var draggableMaskedCorners: CACornerMask = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+    public var draggableContainerHeightConstraint: CGFloat = 30
+    public var draggableContainerBottomConstraint: CGFloat = 0
+    public var draggableHeightConstraint: CGFloat = 5
+    public var draggableWidthConstraint: CGFloat = 40
+    public var draggableBackgroundColor: UIColor = .white
+    public var draggableAlpha: CGFloat = 1
+    public var draggableCornerRadius: CGFloat = 2
+    public var draggableMaskedCorners: CACornerMask = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner]
 }
