@@ -53,7 +53,7 @@ Pod::Spec.new do |spec|
   #  profile URL.
   #
 
-  spec.author             = { "Aleksandar Gyuzelov" => "aleksandar.gyuzelov@scalefocus.com" }
+  spec.author             = { "scalefocus" => "aleksandar.gyuzelov@scalefocus.com" }
   # Or just: spec.author    = "Aleksandar Gyuzelov"
   # spec.authors            = { "Aleksandar Gyuzelov" => "aleksandar.gyuzelov@scalefocus.com" }
   # spec.social_media_url   = "https://twitter.com/Aleksandar Gyuzelov"
@@ -69,7 +69,7 @@ Pod::Spec.new do |spec|
 
   #  When using multiple platforms
   spec.ios.deployment_target = "11.0"
-  spec.swift_version = "4.2"
+  spec.swift_version = "5.0"
   # spec.osx.deployment_target = "10.7"
   # spec.watchos.deployment_target = "2.0"
   # spec.tvos.deployment_target = "9.0"
