@@ -1,12 +1,10 @@
 # SFBottomSheet
-> Short blurb about what your product does.
 
-[![Version](https://img.shields.io/cocoapods/v/TDBadgedCell.svg?style=flat-square)](http://cocoapods.org/pods/TDBadgedCell/)
+<!-- [![Version](https://img.shields.io/cocoapods/v/TDBadgedCell.svg?style=flat-square)](http://cocoapods.org/pods/TDBadgedCell/)
 [![Build Status][travis-image]][travis-url]
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat-square)](https://github.com/Carthage/Carthage)
 ![Downloads](https://img.shields.io/cocoapods/dt/TDBadgedCell.svg?style=flat-square)
 ![Platform](https://img.shields.io/cocoapods/p/TDBadgedCell.svg?style=flat-square)
-![License](https://img.shields.io/cocoapods/l/TDBadgedCell.svg?style=flat-square)
+![License](https://img.shields.io/cocoapods/l/TDBadgedCell.svg?style=flat-square) -->
 
 **SFBottomSheet** is an implementation of custom modal presentation style for thumb-friendly interactive views anchored to the bottom of the screen
 
