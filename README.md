@@ -2,11 +2,9 @@
 
 [![Version][version]](http://cocoapods.org/pods/SFBottomSheet/)
 ![Platform][platform]
-<!-- [![Build Status][travis-image]][travis-url]
-![Downloads](https://img.shields.io/cocoapods/dt/TDBadgedCell.svg?style=flat-square)
- -->
-
 ![License](https://img.shields.io/cocoapods/l/TDBadgedCell.svg?style=flat-square)
+<!-- [![Build Status][travis-image]][travis-url]
+ -->
 
 **SFBottomSheet** is an implementation of custom modal presentation style for thumb-friendly interactive views anchored to the bottom of the screen
 
@@ -159,12 +157,10 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 
 * Aleksandar Gyuzelov
 * Ivan Georgiev
+* Dimitar Petrov
 
 <!-- Markdown link & img dfn's -->
 [version]: https://img.shields.io/cocoapods/v/SFBottomSheet
 [platform]: https://img.shields.io/cocoapods/p/SFBottomSheet?color=red
-
 [license]: https://img.shields.io/cocoapods/l/SFBottomSheet?color=blue
-[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
 [wiki]: https://github.com/scalefocus/SFBottomSheet/wiki
