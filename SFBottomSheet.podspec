@@ -92,7 +92,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "SFBottomSheet", "SFBottomSheet/**/*.{h,m,swift,xib}"
+  spec.source_files  = "SFBottomSheet", "SFBottomSheet/SFBottomSheet/**/*.{h,m,swift,xib}"
   # spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
