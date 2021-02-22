@@ -12,7 +12,7 @@
 ## How to Install
 
 ```sh
-pod SFBottomSheet
+pod 'SFBottomSheet'
 ```
 ```sh
 import SFBottomSheet
@@ -129,12 +129,14 @@ _For more examples and usage, please refer to the [Wiki][wiki]._
 
 ## Extra Informations
 
-* If you have any trouble open a **Issue**
-* If you want to contribute to the project, make a **PR** and explain what your change does.
+* If you have any trouble open a **[Issue](https://github.com/scalefocus/SFBottomSheet/issues)**
+* If you want to contribute to the project, make a **[Pull Request](https://github.com/scalefocus/SFBottomSheet/pulls)** and explain what your change does.
 ## Release History
 
 * 0.0.1
     * Initial setup
+* 0.0.2
+    * Updated .podspec source_files
 
 
 ## Meta
@@ -155,9 +157,9 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 
 ## Contributors
 
-* Aleksandar Gyuzelov
-* Ivan Georgiev
-* Dimitar Petrov
+* [Aleksandar Gyuzelov](aleksandar.gyuzelov@scalefocus.com)
+* [Ivan Georgiev](ivan.georgiev@scalefocus.com)
+* [Dimitar Petrov](dimitar.petrov@scalefocus.com)
 
 <!-- Markdown link & img dfn's -->
 [version]: https://img.shields.io/cocoapods/v/SFBottomSheet
