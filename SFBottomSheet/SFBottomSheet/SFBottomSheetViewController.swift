@@ -174,7 +174,7 @@ extension SFBottomSheetViewController: SFBottomSheetChildDelegate {
 
 // MARK: - Scene Factory
 
-extension SFBottomSheetViewController {
+public extension SFBottomSheetViewController {
     static func createScene(child: SFBottomSheetChildControllerProtocol?,
                             configuration: SFBottomSheetConfigurable?,
                             didFinishWithoutSelection: (() -> Void)?) -> SFBottomSheetViewController? {
