@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02091EB425DC5B80009F2FFC /* SFBottomSheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02091EAA25DC5B80009F2FFC /* SFBottomSheet.framework */; };
-		02091EB925DC5B80009F2FFC /* SFBottomSheetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091EB825DC5B80009F2FFC /* SFBottomSheetTests.swift */; };
 		02091EBB25DC5B80009F2FFC /* SFBottomSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 02091EAD25DC5B80009F2FFC /* SFBottomSheet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02091ECD25DC5C5B009F2FFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091ECC25DC5C5B009F2FFC /* AppDelegate.swift */; };
 		02091ED125DC5C5B009F2FFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02091ED025DC5C5B009F2FFC /* ViewController.swift */; };
@@ -38,23 +36,10 @@
 		027059AF25DE6852005E2ECE /* PopupTextFieldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027059AD25DE6852005E2ECE /* PopupTextFieldViewController.xib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		02091EB525DC5B80009F2FFC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 02091EA125DC5B80009F2FFC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 02091EA925DC5B80009F2FFC;
-			remoteInfo = SFBottomSheet;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		02091EAA25DC5B80009F2FFC /* SFBottomSheet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SFBottomSheet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		02091EAD25DC5B80009F2FFC /* SFBottomSheet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFBottomSheet.h; sourceTree = "<group>"; };
 		02091EAE25DC5B80009F2FFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		02091EB325DC5B80009F2FFC /* SFBottomSheetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SFBottomSheetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		02091EB825DC5B80009F2FFC /* SFBottomSheetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFBottomSheetTests.swift; sourceTree = "<group>"; };
-		02091EBA25DC5B80009F2FFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02091ECA25DC5C5B009F2FFC /* SFBottomSheetDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFBottomSheetDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02091ECC25DC5C5B009F2FFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02091ED025DC5C5B009F2FFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,14 +75,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		02091EB025DC5B80009F2FFC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				02091EB425DC5B80009F2FFC /* SFBottomSheet.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		02091EC725DC5C5B009F2FFC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -112,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				02091EAC25DC5B80009F2FFC /* SFBottomSheet */,
-				02091EB725DC5B80009F2FFC /* SFBottomSheetTests */,
 				02091ECB25DC5C5B009F2FFC /* SFBottomSheetDemo */,
 				02091EAB25DC5B80009F2FFC /* Products */,
 			);
@@ -122,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				02091EAA25DC5B80009F2FFC /* SFBottomSheet.framework */,
-				02091EB325DC5B80009F2FFC /* SFBottomSheetTests.xctest */,
 				02091ECA25DC5C5B009F2FFC /* SFBottomSheetDemo.app */,
 			);
 			name = Products;
@@ -138,15 +113,6 @@
 				02091EE925DC6256009F2FFC /* SFBottomSheetViewController.xib */,
 			);
 			path = SFBottomSheet;
-			sourceTree = "<group>";
-		};
-		02091EB725DC5B80009F2FFC /* SFBottomSheetTests */ = {
-			isa = PBXGroup;
-			children = (
-				02091EB825DC5B80009F2FFC /* SFBottomSheetTests.swift */,
-				02091EBA25DC5B80009F2FFC /* Info.plist */,
-			);
-			path = SFBottomSheetTests;
 			sourceTree = "<group>";
 		};
 		02091ECB25DC5C5B009F2FFC /* SFBottomSheetDemo */ = {
@@ -281,24 +247,6 @@
 			productReference = 02091EAA25DC5B80009F2FFC /* SFBottomSheet.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		02091EB225DC5B80009F2FFC /* SFBottomSheetTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 02091EC125DC5B80009F2FFC /* Build configuration list for PBXNativeTarget "SFBottomSheetTests" */;
-			buildPhases = (
-				02091EAF25DC5B80009F2FFC /* Sources */,
-				02091EB025DC5B80009F2FFC /* Frameworks */,
-				02091EB125DC5B80009F2FFC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				02091EB625DC5B80009F2FFC /* PBXTargetDependency */,
-			);
-			name = SFBottomSheetTests;
-			productName = SFBottomSheetTests;
-			productReference = 02091EB325DC5B80009F2FFC /* SFBottomSheetTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		02091EC925DC5C5B009F2FFC /* SFBottomSheetDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02091EDB25DC5C5D009F2FFC /* Build configuration list for PBXNativeTarget "SFBottomSheetDemo" */;
@@ -329,9 +277,6 @@
 						CreatedOnToolsVersion = 12.3;
 						LastSwiftMigration = 1230;
 					};
-					02091EB225DC5B80009F2FFC = {
-						CreatedOnToolsVersion = 12.3;
-					};
 					02091EC925DC5C5B009F2FFC = {
 						CreatedOnToolsVersion = 12.3;
 					};
@@ -351,7 +296,6 @@
 			projectRoot = "";
 			targets = (
 				02091EA925DC5B80009F2FFC /* SFBottomSheet */,
-				02091EB225DC5B80009F2FFC /* SFBottomSheetTests */,
 				02091EC925DC5C5B009F2FFC /* SFBottomSheetDemo */,
 			);
 		};
@@ -363,13 +307,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				02091EEB25DC6256009F2FFC /* SFBottomSheetViewController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		02091EB125DC5B80009F2FFC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,14 +339,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		02091EAF25DC5B80009F2FFC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				02091EB925DC5B80009F2FFC /* SFBottomSheetTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		02091EC625DC5C5B009F2FFC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -431,14 +360,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		02091EB625DC5B80009F2FFC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 02091EA925DC5B80009F2FFC /* SFBottomSheet */;
-			targetProxy = 02091EB525DC5B80009F2FFC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		02091ED225DC5C5B009F2FFC /* Main.storyboard */ = {
@@ -637,44 +558,6 @@
 			};
 			name = Release;
 		};
-		02091EC225DC5B80009F2FFC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UWBDU93DZY;
-				INFOPLIST_FILE = SFBottomSheetTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = scalefocus.SFBottomSheetTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		02091EC325DC5B80009F2FFC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UWBDU93DZY;
-				INFOPLIST_FILE = SFBottomSheetTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = scalefocus.SFBottomSheetTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		02091EDC25DC5C5D009F2FFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -732,15 +615,6 @@
 			buildConfigurations = (
 				02091EBF25DC5B80009F2FFC /* Debug */,
 				02091EC025DC5B80009F2FFC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		02091EC125DC5B80009F2FFC /* Build configuration list for PBXNativeTarget "SFBottomSheetTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				02091EC225DC5B80009F2FFC /* Debug */,
-				02091EC325DC5B80009F2FFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
