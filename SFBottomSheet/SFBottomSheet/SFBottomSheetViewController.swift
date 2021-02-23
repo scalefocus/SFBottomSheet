@@ -27,7 +27,7 @@ public protocol SFBottomSheetChildDelegate: class {
 }
 
 public class SFBottomSheetViewController: UIViewController {
-
+    
     // MARK: - Outlets
     
     @IBOutlet private weak var contentView: UIView!
@@ -150,9 +150,8 @@ public class SFBottomSheetViewController: UIViewController {
                 panGesture.state = .ended
             }
         default:
-            containerViewHeightConstraint.constant = containerViewHeightConstraint.constant > minimumAvailableContainerHeight ?
-                                                                                            childViewController.defaultContainerHeight :
-                                                                                            .zero
+            containerViewHeightConstraint.constant = containerViewHeightConstraint.constant >
+                minimumAvailableContainerHeight ? childViewController.defaultContainerHeight : .zero
             UIView.animate(withDuration: animationDuration,
                            animations: { [weak self] in self?.view.layoutIfNeeded() },
                            completion: { [weak self] _ in self?.closeSceneIfNeeded() })
@@ -178,7 +177,9 @@ public extension SFBottomSheetViewController {
     static func createScene(child: SFBottomSheetChildControllerProtocol?,
                             configuration: SFBottomSheetConfigurable?,
                             didFinishWithoutSelection: (() -> Void)?) -> SFBottomSheetViewController? {
-        let controller = SFBottomSheetViewController()
+        
+        let bundle = Bundle(for: self)
+        let controller = SFBottomSheetViewController(nibName: "\(self)", bundle: bundle)
         controller.childViewController = child
         controller.configurator = configuration ?? SFBottomSheetConfigurator()
         controller.didFinishWithoutSelection = didFinishWithoutSelection
