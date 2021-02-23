@@ -107,14 +107,12 @@ Pod::Spec.new do |spec|
   #
 
   # spec.resource  = "icon.png"
-  spec.resources = {
-    'SFBottomSheet' => [
+  spec.resources = [
       'SFBottomSheet/SFBottomSheet/**/*.xib'
-    ]
-  }
+   ]
 
-  s.resource_bundles = {
-    'MyFramework' => ['Pod/Classes/**/*.{storyboard,xib,xcassets,json,imageset,png}']
+  spec.resource_bundles = {
+    'SFBottomSheet' => ['Pod/Classes/**/*.{storyboard,xib,xcassets,json,imageset,png}']
   }
 
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
