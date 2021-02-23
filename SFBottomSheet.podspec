@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "SFBottomSheet"
-  spec.version      = "0.0.4"
+  spec.version      = "0.0.5"
   spec.summary      = "SFBottomSheet."
 
   # This description is used to generate tags and improve search results.
@@ -107,12 +107,12 @@ Pod::Spec.new do |spec|
   #
 
   # spec.resource  = "icon.png"
-  spec.resources = [
-      'SFBottomSheet/SFBottomSheet/**/*.xib'
-   ]
+  # spec.resources = [
+  #     'SFBottomSheet/SFBottomSheet/**/*.xib'
+  #  ]
 
   spec.resource_bundles = {
-    'SFBottomSheet' => ['Pod/Classes/**/*.{storyboard,xib,xcassets,json,imageset,png}']
+    'SFBottomSheet' => ['SFBottomSheet/SFBottomSheet/**/*.{storyboard,xib,xcassets,json,imageset,png}']
   }
 
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
