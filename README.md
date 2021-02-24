@@ -141,6 +141,8 @@ _For more examples and usage, please refer to the [Wiki][wiki]._
     * Updated SFBottomSheetViewController createScene func protection level
 * 0.0.4
     * Updated .podspec resource_bundles and fix SFBottomSheetViewController instantiation
+* 0.0.6
+    * Updated .podspec and provide SFBottomSheetConfigurable public init 
 
 ## Meta
 
