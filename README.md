@@ -143,6 +143,8 @@ _For more examples and usage, please refer to the [Wiki][wiki]._
     * Updated .podspec resource_bundles and fix SFBottomSheetViewController instantiation
 * 0.0.6
     * Updated .podspec and provide SFBottomSheetConfigurable public init 
+* 0.0.7
+    * Fixing child trailing constraint by updating SFBottomSheetChildControllerProtocol
 
 ## Meta
 

@@ -46,6 +46,7 @@ class PopupErrorViewController: UIViewController, SFBottomSheetChildControllerPr
     var minimumAvailableContainerHeight: CGFloat = 100
     var maximumAvailableHeightCoefficient: CGFloat = 0.8
     var childContainerLeadingDefaultConstraint: CGFloat = 16
+    var childContainerTrailingDefaulConstraint: CGFloat = 16
     private var maximumHeight: CGFloat = .zero
     
     override func viewDidLoad() {

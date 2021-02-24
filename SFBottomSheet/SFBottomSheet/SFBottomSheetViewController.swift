@@ -14,6 +14,7 @@ public protocol SFBottomSheetChildControllerProtocol: UIViewController {
     var minimumAvailableContainerHeight: CGFloat { get }
     var maximumAvailableHeightCoefficient: CGFloat { get }
     var childContainerLeadingDefaultConstraint: CGFloat { get }
+    var childContainerTrailingDefaulConstraint: CGFloat { get }
     
     func getContainerHeight(_ maximumAvailableContainerHeight: CGFloat) -> CGFloat
     
@@ -43,6 +44,7 @@ public class SFBottomSheetViewController: UIViewController {
     @IBOutlet private weak var draggableView: UIView!
     @IBOutlet private weak var containerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var childContainerLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var childContainerTrailingConstraint: NSLayoutConstraint!
     @IBOutlet private weak var draggableContainerHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var draggableContainerBottomConstraint: NSLayoutConstraint!
     @IBOutlet private weak var draggableHeightConstraint: NSLayoutConstraint!
@@ -80,6 +82,7 @@ public class SFBottomSheetViewController: UIViewController {
         maximumAvailableContainerHeight = view.frame.height * childViewController.maximumAvailableHeightCoefficient
         containerViewHeightConstraint.constant = childViewController.getContainerHeight(maximumAvailableContainerHeight)
         childContainerLeadingConstraint.constant = childViewController.childContainerLeadingDefaultConstraint
+        childContainerTrailingConstraint.constant = childViewController.childContainerTrailingDefaulConstraint
         minimumAvailableContainerHeight = childViewController.minimumAvailableContainerHeight
         UIView.animate(withDuration: animationDuration) { [weak self] in
             self?.view.layoutIfNeeded()

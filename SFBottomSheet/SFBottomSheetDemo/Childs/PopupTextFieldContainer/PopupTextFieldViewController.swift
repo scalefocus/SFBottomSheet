@@ -42,6 +42,7 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
     var minimumAvailableContainerHeight: CGFloat = .zero
     var maximumAvailableHeightCoefficient: CGFloat = 0.85
     var childContainerLeadingDefaultConstraint: CGFloat = 16
+    var childContainerTrailingDefaulConstraint: CGFloat = 16
     private var initialContainerHeight: CGFloat = 200
     private var maximumHeight: CGFloat = .zero
     private var isKeyboardVisible: Bool = false
