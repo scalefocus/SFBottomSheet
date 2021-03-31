@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SFBottomSheetViewController" customModule="SFBottomSheet" customModuleProvider="target">
             <connections>
                 <outlet property="childContainerLeadingConstraint" destination="Ndn-Mo-8uG" id="ATR-Rg-x1I"/>
+                <outlet property="childContainerTrailingConstraint" destination="bx4-OY-BIF" id="L9z-8g-Q4K"/>
                 <outlet property="childContainerView" destination="LiR-UF-ohY" id="rry-57-jLd"/>
                 <outlet property="containerView" destination="aV3-ok-mXT" id="zGW-xb-xXR"/>
                 <outlet property="containerViewHeightConstraint" destination="9z0-dg-4Y6" id="kuC-g7-kQp"/>

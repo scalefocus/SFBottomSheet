@@ -1,10 +1,10 @@
 # SFBottomSheet
 
-<!-- [![Version](https://img.shields.io/cocoapods/v/TDBadgedCell.svg?style=flat-square)](http://cocoapods.org/pods/TDBadgedCell/)
-[![Build Status][travis-image]][travis-url]
-![Downloads](https://img.shields.io/cocoapods/dt/TDBadgedCell.svg?style=flat-square)
-![Platform](https://img.shields.io/cocoapods/p/TDBadgedCell.svg?style=flat-square)
-![License](https://img.shields.io/cocoapods/l/TDBadgedCell.svg?style=flat-square) -->
+[![Version][version]](http://cocoapods.org/pods/SFBottomSheet/)
+![Platform][platform]
+![License](https://img.shields.io/cocoapods/l/TDBadgedCell.svg?style=flat-square)
+<!-- [![Build Status][travis-image]][travis-url]
+ -->
 
 **SFBottomSheet** is an implementation of custom modal presentation style for thumb-friendly interactive views anchored to the bottom of the screen
 
@@ -12,7 +12,7 @@
 ## How to Install
 
 ```sh
-pod SFBottomSheet
+pod 'SFBottomSheet'
 ```
 ```sh
 import SFBottomSheet
@@ -129,13 +129,22 @@ _For more examples and usage, please refer to the [Wiki][wiki]._
 
 ## Extra Informations
 
-* If you have any trouble open a **Issue**
-* If you want to contribute to the project, make a **PR** and explain what your change does.
+* If you have any trouble open a **[Issue](https://github.com/scalefocus/SFBottomSheet/issues)**
+* If you want to contribute to the project, make a **[Pull Request](https://github.com/scalefocus/SFBottomSheet/pulls)** and explain what your change does.
 ## Release History
 
 * 0.0.1
     * Initial setup
-
+* 0.0.2
+    * Updated .podspec source_files
+* 0.0.3
+    * Updated SFBottomSheetViewController createScene func protection level
+* 0.0.4
+    * Updated .podspec resource_bundles and fix SFBottomSheetViewController instantiation
+* 0.0.6
+    * Updated .podspec and provide SFBottomSheetConfigurable public init 
+* 0.0.7
+    * Fixing child trailing constraint by updating SFBottomSheetChildControllerProtocol
 
 ## Meta
 
@@ -155,10 +164,12 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 
 ## Contributors
 
-* Aleksandar Gyuzelov
-* Ivan Georgiev
+* [Aleksandar Gyuzelov](aleksandar.gyuzelov@scalefocus.com)
+* [Ivan Georgiev](ivan.georgiev@scalefocus.com)
+* [Dimitar Petrov](dimitar.petrov@scalefocus.com)
 
 <!-- Markdown link & img dfn's -->
-[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
+[version]: https://img.shields.io/cocoapods/v/SFBottomSheet
+[platform]: https://img.shields.io/cocoapods/p/SFBottomSheet?color=red
+[license]: https://img.shields.io/cocoapods/l/SFBottomSheet?color=blue
 [wiki]: https://github.com/scalefocus/SFBottomSheet/wiki

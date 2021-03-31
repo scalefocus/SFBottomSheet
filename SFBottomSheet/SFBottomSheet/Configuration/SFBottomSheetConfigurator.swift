@@ -34,7 +34,10 @@ public struct SFBottomSheetConfigurator: SFBottomSheetConfigurable {
     
     // MARK: Content
     
-    public var contentViewBackgroundColor: UIColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+    public var contentViewBackgroundColor: UIColor = UIColor(red: 0,
+                                                             green: 0,
+                                                             blue: 0,
+                                                             alpha: 0.4)
     
     // MARK: Container
     
@@ -50,4 +53,7 @@ public struct SFBottomSheetConfigurator: SFBottomSheetConfigurable {
     public var draggableAlpha: CGFloat = 1
     public var draggableCornerRadius: CGFloat = 2
     public var draggableMaskedCorners: CACornerMask = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+    
+    public init () {}
+    
 }

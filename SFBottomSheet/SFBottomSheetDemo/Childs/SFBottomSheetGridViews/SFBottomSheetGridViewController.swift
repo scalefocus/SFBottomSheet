@@ -27,6 +27,7 @@ class SFBottomSheetGridViewController: UIViewController, SFBottomSheetChildContr
     }
     var maximumAvailableHeightCoefficient: CGFloat = 0.7
     var childContainerLeadingDefaultConstraint: CGFloat = 16
+    var childContainerTrailingDefaulConstraint: CGFloat = 16
     
     override func viewDidLoad() {
         super.viewDidLoad()

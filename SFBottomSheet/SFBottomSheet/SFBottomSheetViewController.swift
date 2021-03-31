@@ -14,6 +14,7 @@ public protocol SFBottomSheetChildControllerProtocol: UIViewController {
     var minimumAvailableContainerHeight: CGFloat { get }
     var maximumAvailableHeightCoefficient: CGFloat { get }
     var childContainerLeadingDefaultConstraint: CGFloat { get }
+    var childContainerTrailingDefaulConstraint: CGFloat { get }
     
     func getContainerHeight(_ maximumAvailableContainerHeight: CGFloat) -> CGFloat
     
@@ -27,7 +28,7 @@ public protocol SFBottomSheetChildDelegate: class {
 }
 
 public class SFBottomSheetViewController: UIViewController {
-
+    
     // MARK: - Outlets
     
     @IBOutlet private weak var contentView: UIView!
@@ -43,6 +44,7 @@ public class SFBottomSheetViewController: UIViewController {
     @IBOutlet private weak var draggableView: UIView!
     @IBOutlet private weak var containerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var childContainerLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var childContainerTrailingConstraint: NSLayoutConstraint!
     @IBOutlet private weak var draggableContainerHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var draggableContainerBottomConstraint: NSLayoutConstraint!
     @IBOutlet private weak var draggableHeightConstraint: NSLayoutConstraint!
@@ -80,6 +82,7 @@ public class SFBottomSheetViewController: UIViewController {
         maximumAvailableContainerHeight = view.frame.height * childViewController.maximumAvailableHeightCoefficient
         containerViewHeightConstraint.constant = childViewController.getContainerHeight(maximumAvailableContainerHeight)
         childContainerLeadingConstraint.constant = childViewController.childContainerLeadingDefaultConstraint
+        childContainerTrailingConstraint.constant = childViewController.childContainerTrailingDefaulConstraint
         minimumAvailableContainerHeight = childViewController.minimumAvailableContainerHeight
         UIView.animate(withDuration: animationDuration) { [weak self] in
             self?.view.layoutIfNeeded()
@@ -150,9 +153,8 @@ public class SFBottomSheetViewController: UIViewController {
                 panGesture.state = .ended
             }
         default:
-            containerViewHeightConstraint.constant = containerViewHeightConstraint.constant > minimumAvailableContainerHeight ?
-                                                                                            childViewController.defaultContainerHeight :
-                                                                                            .zero
+            containerViewHeightConstraint.constant = containerViewHeightConstraint.constant >
+                minimumAvailableContainerHeight ? childViewController.defaultContainerHeight : .zero
             UIView.animate(withDuration: animationDuration,
                            animations: { [weak self] in self?.view.layoutIfNeeded() },
                            completion: { [weak self] _ in self?.closeSceneIfNeeded() })
@@ -174,11 +176,13 @@ extension SFBottomSheetViewController: SFBottomSheetChildDelegate {
 
 // MARK: - Scene Factory
 
-extension SFBottomSheetViewController {
+public extension SFBottomSheetViewController {
     static func createScene(child: SFBottomSheetChildControllerProtocol?,
                             configuration: SFBottomSheetConfigurable?,
                             didFinishWithoutSelection: (() -> Void)?) -> SFBottomSheetViewController? {
-        let controller = SFBottomSheetViewController()
+        
+        let bundle = Bundle(for: self)
+        let controller = SFBottomSheetViewController(nibName: "\(self)", bundle: bundle)
         controller.childViewController = child
         controller.configurator = configuration ?? SFBottomSheetConfigurator()
         controller.didFinishWithoutSelection = didFinishWithoutSelection
