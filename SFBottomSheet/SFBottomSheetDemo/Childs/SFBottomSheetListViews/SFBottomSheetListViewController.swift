@@ -16,8 +16,6 @@ protocol SFBottomSheetListViewModelProtocol {
 }
 
 class SFBottomSheetListViewController: UIViewController, SFBottomSheetChildControllerProtocol {
-    
-    weak var delegate: SFBottomSheetChildDelegate?
 
     fileprivate var viewModel: SFBottomSheetListViewModelProtocol!
 
@@ -26,30 +24,28 @@ class SFBottomSheetListViewController: UIViewController, SFBottomSheetChildContr
     @IBOutlet private weak var tableView: UITableView!
 
     // MARK: - Properties
-
-    var defaultContainerHeight: CGFloat = .zero
-    var defaultRowHeight: CGFloat = 70
-    var minimumAvailableContainerHeight: CGFloat {
-        return defaultContainerHeight * 0.2
-    }
-    var maximumAvailableHeightCoefficient: CGFloat = 0.75
-    var childContainerLeadingDefaultConstraint: CGFloat = 16
-    var childContainerTrailingDefaulConstraint: CGFloat = 16
+    
+    @objc dynamic var bottomSheetAppearanceSizes: BottomSheetChildAppearanceSizes!
+    var didRequestCloseAction: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupScene()
         setupTableView()
     }
-
-    func getContainerHeight(_ maximumAvailableContainerHeight: CGFloat) -> CGFloat {
+    
+    private func setupScene() {
+        let defaultRowHeight: CGFloat = 70
         let contentHeight = CGFloat(viewModel.dataSource.count) * defaultRowHeight
-        let eligibleCellCounts = Int(maximumAvailableContainerHeight / defaultRowHeight)
+        let eligibleCellCounts = Int((UIScreen.main.bounds.height * 0.80) / defaultRowHeight)
         let eligibleContainerHeight = defaultRowHeight * CGFloat(eligibleCellCounts)
-        defaultContainerHeight = min(eligibleContainerHeight, contentHeight)
-        if defaultContainerHeight == contentHeight {
+        let initialContainerHeight = min(eligibleContainerHeight, contentHeight)
+        if initialContainerHeight == contentHeight {
             tableView.isScrollEnabled = false
         }
-        return defaultContainerHeight
+        bottomSheetAppearanceSizes = BottomSheetChildAppearanceSizes(containerHeight: initialContainerHeight,
+                                                                     minimumAvailableContainerHeight: initialContainerHeight * 0.2,
+                                                                     maximumAvailableHeightCoefficient: 0.90)
     }
 
     private func setupTableView() {
@@ -66,8 +62,7 @@ extension SFBottomSheetListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard viewModel.dataSource.indices.indices.contains(indexPath.row) else { return }
-        print(viewModel.dataSource[indexPath.row])
-        delegate?.childDidRequestClose()
+        didRequestCloseAction?()
     }
 
 }

@@ -12,6 +12,8 @@ public protocol SFBottomSheetConfigurable {
     // MARK: Content
     
     var contentViewBackgroundColor: UIColor { get }
+    var childContainerLeadingDefaultConstraint: CGFloat { get }
+    var childContainerTrailingDefaulConstraint: CGFloat { get }
     
     // MARK: Container
     
@@ -38,6 +40,8 @@ public struct SFBottomSheetConfigurator: SFBottomSheetConfigurable {
                                                              green: 0,
                                                              blue: 0,
                                                              alpha: 0.4)
+    public var childContainerLeadingDefaultConstraint: CGFloat = 16
+    public var childContainerTrailingDefaulConstraint: CGFloat = 16
     
     // MARK: Container
     
