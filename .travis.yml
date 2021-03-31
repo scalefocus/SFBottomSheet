@@ -1,9 +1,8 @@
 language: objective-c
-osx_image: xcode11.6
-xcode_project: SFBottomSheet.xcodeproj #3
-xcode_scheme: SFBottomSheetDemo #4
-xcode_sdk: iphonesimulator8.4 #5
-
+osx_image: xcode12.2
+xcode_project: SFBottomSheet.xcodeproj
+xcode_scheme: SFBottomSheetDemo
+xcode_sdk: iphonesimulator14.2
 # env:
 #   matrix:
 #     - TEST_SDK=iphonesimulator12.1 OS=13.3 name='iPhone XR'
