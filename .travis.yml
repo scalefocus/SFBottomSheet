@@ -2,7 +2,7 @@ language: objective-c
 osx_image: xcode11.6
 xcode_project: SFBottomSheet.xcodeproj #3
 xcode_scheme: SFBottomSheetDemo #4
-xcode_sdk: iphonesimulator12.1 #5
+xcode_sdk: iphonesimulator8.4 #5
 
 # env:
 #   matrix:
