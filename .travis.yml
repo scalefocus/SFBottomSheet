@@ -3,3 +3,10 @@ osx_image: xcode12.2
 xcode_project: SFBottomSheet/SFBottomSheet.xcodeproj
 xcode_scheme: SFBottomSheetDemo
 xcode_sdk: iphonesimulator14.2
+
+env:
+  matrix:
+    - TEST_SDK=iphonesimulator14.2 OS=14.2 NAME='iPhone XR'
+
+script:
+  - set -o pipefail && xcodebuild test -enableCodeCoverage YES -project SFBottomSheet/SFBottomSheet.xcodeproj -scheme SFBottomSheetDemo -sdk $TEST_SDK -destination "platform=iOS Simulator,OS=$OS,name=$NAME" ONLY_ACTIVE_ARCH=YES
