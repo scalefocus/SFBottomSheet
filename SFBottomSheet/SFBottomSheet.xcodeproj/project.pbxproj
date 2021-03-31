@@ -34,7 +34,18 @@
 		0270599025DE5AC6005E2ECE /* SFBottomSheetGridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0270598E25DE5AC6005E2ECE /* SFBottomSheetGridCollectionViewCell.xib */; };
 		027059AE25DE6852005E2ECE /* PopupTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027059AC25DE6852005E2ECE /* PopupTextFieldViewController.swift */; };
 		027059AF25DE6852005E2ECE /* PopupTextFieldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027059AD25DE6852005E2ECE /* PopupTextFieldViewController.xib */; };
+		02AA4DD2261528F10046C4C7 /* SFBottomSheetDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AA4DD1261528F10046C4C7 /* SFBottomSheetDemoTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		02AA4DD4261528F10046C4C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02091EA125DC5B80009F2FFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02091EC925DC5C5B009F2FFC;
+			remoteInfo = SFBottomSheetDemo;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		02091EAA25DC5B80009F2FFC /* SFBottomSheet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SFBottomSheet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +76,9 @@
 		0270598E25DE5AC6005E2ECE /* SFBottomSheetGridCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SFBottomSheetGridCollectionViewCell.xib; sourceTree = "<group>"; };
 		027059AC25DE6852005E2ECE /* PopupTextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupTextFieldViewController.swift; sourceTree = "<group>"; };
 		027059AD25DE6852005E2ECE /* PopupTextFieldViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupTextFieldViewController.xib; sourceTree = "<group>"; };
+		02AA4DCF261528F10046C4C7 /* SFBottomSheetDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SFBottomSheetDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		02AA4DD1261528F10046C4C7 /* SFBottomSheetDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFBottomSheetDemoTests.swift; sourceTree = "<group>"; };
+		02AA4DD3261528F10046C4C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +96,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		02AA4DCC261528F10046C4C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -90,6 +111,7 @@
 			children = (
 				02091EAC25DC5B80009F2FFC /* SFBottomSheet */,
 				02091ECB25DC5C5B009F2FFC /* SFBottomSheetDemo */,
+				02AA4DD0261528F10046C4C7 /* SFBottomSheetDemoTests */,
 				02091EAB25DC5B80009F2FFC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,6 +121,7 @@
 			children = (
 				02091EAA25DC5B80009F2FFC /* SFBottomSheet.framework */,
 				02091ECA25DC5C5B009F2FFC /* SFBottomSheetDemo.app */,
+				02AA4DCF261528F10046C4C7 /* SFBottomSheetDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -215,6 +238,15 @@
 			path = PopupTextFieldContainer;
 			sourceTree = "<group>";
 		};
+		02AA4DD0261528F10046C4C7 /* SFBottomSheetDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				02AA4DD1261528F10046C4C7 /* SFBottomSheetDemoTests.swift */,
+				02AA4DD3261528F10046C4C7 /* Info.plist */,
+			);
+			path = SFBottomSheetDemoTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -264,13 +296,31 @@
 			productReference = 02091ECA25DC5C5B009F2FFC /* SFBottomSheetDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		02AA4DCE261528F10046C4C7 /* SFBottomSheetDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02AA4DD8261528F10046C4C7 /* Build configuration list for PBXNativeTarget "SFBottomSheetDemoTests" */;
+			buildPhases = (
+				02AA4DCB261528F10046C4C7 /* Sources */,
+				02AA4DCC261528F10046C4C7 /* Frameworks */,
+				02AA4DCD261528F10046C4C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				02AA4DD5261528F10046C4C7 /* PBXTargetDependency */,
+			);
+			name = SFBottomSheetDemoTests;
+			productName = SFBottomSheetDemoTests;
+			productReference = 02AA4DCF261528F10046C4C7 /* SFBottomSheetDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		02091EA125DC5B80009F2FFC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1230;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
 					02091EA925DC5B80009F2FFC = {
@@ -279,6 +329,10 @@
 					};
 					02091EC925DC5C5B009F2FFC = {
 						CreatedOnToolsVersion = 12.3;
+					};
+					02AA4DCE261528F10046C4C7 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 02091EC925DC5C5B009F2FFC;
 					};
 				};
 			};
@@ -297,6 +351,7 @@
 			targets = (
 				02091EA925DC5B80009F2FFC /* SFBottomSheet */,
 				02091EC925DC5C5B009F2FFC /* SFBottomSheetDemo */,
+				02AA4DCE261528F10046C4C7 /* SFBottomSheetDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -324,6 +379,13 @@
 				0270593F25DDAEFF005E2ECE /* SFBottomSheetListViewController.xib in Resources */,
 				02091ED425DC5C5B009F2FFC /* Main.storyboard in Resources */,
 				0270597C25DE57DC005E2ECE /* SFBottomSheetGridViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02AA4DCD261528F10046C4C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,7 +421,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		02AA4DCB261528F10046C4C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02AA4DD2261528F10046C4C7 /* SFBottomSheetDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		02AA4DD5261528F10046C4C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02091EC925DC5C5B009F2FFC /* SFBottomSheetDemo */;
+			targetProxy = 02AA4DD4261528F10046C4C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		02091ED225DC5C5B009F2FFC /* Main.storyboard */ = {
@@ -598,6 +676,48 @@
 			};
 			name = Release;
 		};
+		02AA4DD6261528F10046C4C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6372B8D7Q5;
+				INFOPLIST_FILE = SFBottomSheetDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = scalefocus.SFBottomSheetDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SFBottomSheetDemo.app/SFBottomSheetDemo";
+			};
+			name = Debug;
+		};
+		02AA4DD7261528F10046C4C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6372B8D7Q5;
+				INFOPLIST_FILE = SFBottomSheetDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = scalefocus.SFBottomSheetDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SFBottomSheetDemo.app/SFBottomSheetDemo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -624,6 +744,15 @@
 			buildConfigurations = (
 				02091EDC25DC5C5D009F2FFC /* Debug */,
 				02091EDD25DC5C5D009F2FFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02AA4DD8261528F10046C4C7 /* Build configuration list for PBXNativeTarget "SFBottomSheetDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02AA4DD6261528F10046C4C7 /* Debug */,
+				02AA4DD7261528F10046C4C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
