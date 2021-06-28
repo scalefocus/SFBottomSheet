@@ -52,7 +52,7 @@ class ViewController: UIViewController {
         else { return }
         var configurator = SFBottomSheetConfigurator()
         configurator.draggableAlpha = 0.7
-        configurator.contentViewBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
+        configurator.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
         openBottonSheet(with: child, configuration: configurator)
     }
     

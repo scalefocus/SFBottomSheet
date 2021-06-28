@@ -16,18 +16,18 @@ protocol SFBottomSheetListViewModelProtocol {
 }
 
 class SFBottomSheetListViewController: UIViewController, SFBottomSheetChildControllerProtocol {
-
+    
     fileprivate var viewModel: SFBottomSheetListViewModelProtocol!
-
+    
     // MARK: - Outlets
-
+    
     @IBOutlet private weak var tableView: UITableView!
-
+    
     // MARK: - Properties
     
-    @objc dynamic var bottomSheetAppearanceSizes: BottomSheetChildAppearanceSizes!
+    var bottomSheetAppearance: BottomSheetChildAppearance!
     var didRequestCloseAction: (() -> Void)?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupScene()
@@ -43,38 +43,38 @@ class SFBottomSheetListViewController: UIViewController, SFBottomSheetChildContr
         if initialContainerHeight == contentHeight {
             tableView.isScrollEnabled = false
         }
-        bottomSheetAppearanceSizes = BottomSheetChildAppearanceSizes(containerHeight: initialContainerHeight,
-                                                                     minimumAvailableContainerHeight: initialContainerHeight * 0.2,
-                                                                     maximumAvailableHeightCoefficient: 0.90)
+        bottomSheetAppearance = BottomSheetChildAppearance(containerHeight: initialContainerHeight,
+                                                           minimumAvailableContainerHeight: initialContainerHeight * 0.2,
+                                                           maximumAvailableHeightCoefficient: 0.90)
     }
-
+    
     private func setupTableView() {
         tableView.register(UINib(nibName: "\(SFBottomSheetListTableViewCell.self)", bundle: nil),
                            forCellReuseIdentifier: "\(SFBottomSheetListTableViewCell.self)")
         tableView.backgroundColor = .white
     }
-
+    
 }
 
 // MARK: - UITableViewDelegate
 
 extension SFBottomSheetListViewController: UITableViewDelegate {
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard viewModel.dataSource.indices.indices.contains(indexPath.row) else { return }
         didRequestCloseAction?()
     }
-
+    
 }
 
 // MARK: - UITableViewDataSource
 
 extension SFBottomSheetListViewController: UITableViewDataSource {
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfCellsInSection(section)
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(SFBottomSheetListTableViewCell.self)", for: indexPath) as? SFBottomSheetListTableViewCell
@@ -82,7 +82,7 @@ extension SFBottomSheetListViewController: UITableViewDataSource {
         cell.configureWith(viewModel.dataSource[indexPath.row])
         return cell
     }
-
+    
 }
 
 struct SFBottomSheetListSceneConfigurator {

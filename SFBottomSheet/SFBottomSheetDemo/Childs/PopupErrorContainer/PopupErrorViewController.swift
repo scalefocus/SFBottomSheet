@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PopupErrorViewМodelProtocol {
-
+    
     var typeIcon: UIImage? { get }
     var errorTitle: String { get }
     var description: String { get }
@@ -19,7 +19,7 @@ protocol PopupErrorViewМodelProtocol {
 }
 
 @objc class PopupErrorViewController: UIViewController, SFBottomSheetChildControllerProtocol {
-   
+    
     private var viewModel: PopupErrorViewМodelProtocol!
     
     // MARK: - Outlets
@@ -40,14 +40,14 @@ protocol PopupErrorViewМodelProtocol {
     
     // MARK: - Properties
     
-    @objc dynamic var bottomSheetAppearanceSizes: BottomSheetChildAppearanceSizes!
+    var bottomSheetAppearance: BottomSheetChildAppearance!
     var didRequestCloseAction: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bottomSheetAppearanceSizes = BottomSheetChildAppearanceSizes(containerHeight: 300,
-                                                                     minimumAvailableContainerHeight: 100,
-                                                                     maximumAvailableHeightCoefficient: 0.85)
+        bottomSheetAppearance = BottomSheetChildAppearance(containerHeight: 300,
+                                                           minimumAvailableContainerHeight: 100,
+                                                           maximumAvailableHeightCoefficient: 0.85)
         setup()
         
         actionButton.addTarget(self, action: #selector(didTapActionButton), for: .touchUpInside)
@@ -59,8 +59,8 @@ protocol PopupErrorViewМodelProtocol {
         scrollView.setNeedsLayout()
         scrollView.layoutIfNeeded()
         let scrollViewContentHeight = scrollView.contentSize.height + 50
-        let maximumHeight = UIScreen.main.bounds.size.height * bottomSheetAppearanceSizes.maximumAvailableHeightCoefficient
-        bottomSheetAppearanceSizes.containerHeight = min(scrollViewContentHeight, maximumHeight)
+        let maximumHeight = UIScreen.main.bounds.size.height * bottomSheetAppearance.maximumAvailableHeightCoefficient
+        bottomSheetAppearance.containerHeight = min(scrollViewContentHeight, maximumHeight)
     }
     
     private func setup() {

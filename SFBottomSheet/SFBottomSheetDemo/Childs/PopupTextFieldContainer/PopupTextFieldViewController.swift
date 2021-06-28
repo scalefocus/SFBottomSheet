@@ -8,7 +8,7 @@
 import UIKit
 
 class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControllerProtocol {
-
+    
     private var viewModel: PopupErrorViewМodelProtocol!
     
     // MARK: - Outlets
@@ -37,16 +37,16 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
     
     // MARK: - Properties
     
-    @objc dynamic var bottomSheetAppearanceSizes: BottomSheetChildAppearanceSizes!
+    var bottomSheetAppearance: BottomSheetChildAppearance!
     var didRequestCloseAction: (() -> Void)?
     private var initialContainerHeight: CGFloat = 200
     private var isKeyboardVisible: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bottomSheetAppearanceSizes = BottomSheetChildAppearanceSizes(containerHeight: initialContainerHeight,
-                                                                     minimumAvailableContainerHeight: 100,
-                                                                     maximumAvailableHeightCoefficient: 0.85)
+        bottomSheetAppearance = BottomSheetChildAppearance(containerHeight: initialContainerHeight,
+                                                           minimumAvailableContainerHeight: 100,
+                                                           maximumAvailableHeightCoefficient: 0.85)
         setup()
         
         actionButton.addTarget(self, action: #selector(didTapActionButton), for: .touchUpInside)
@@ -67,7 +67,7 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
     @objc private func autoHideGestureTapped(gestureRecognizer: UIGestureRecognizer) {
         let location = gestureRecognizer.location(in: nil)
         let matchingViews = view.descendants()
-        .filter { $0.convert($0.bounds, to: nil).contains(location) }
+            .filter { $0.convert($0.bounds, to: nil).contains(location) }
         
         let textInputViews = matchingViews.filter { $0 is UITextView || $0 is UITextField }
         
@@ -84,7 +84,7 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
     
     @objc private func keyboardWillHide(notification: Notification) {
         isKeyboardVisible = false
-        bottomSheetAppearanceSizes.containerHeight = initialContainerHeight
+        bottomSheetAppearance.containerHeight = initialContainerHeight
         UIView.animate(withDuration: 0.5) { [weak self] in
             self?.view.layoutIfNeeded()
         }
@@ -92,7 +92,7 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
     
     private func keyboardWillShowWithHeight(_ height: CGFloat) {
         guard !isKeyboardVisible else { return }
-        bottomSheetAppearanceSizes.containerHeight += height
+        bottomSheetAppearance.containerHeight += height
         UIView.animate(withDuration: 0.5) { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.view.layoutIfNeeded()
@@ -102,7 +102,7 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
     }
     
     // MARK: - Methods
-
+    
     private func setup() {
         typeIconImageView.image = viewModel.typeIcon
         errorTitleLabel.text = viewModel.errorTitle

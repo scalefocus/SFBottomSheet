@@ -8,17 +8,17 @@
 import UIKit
 
 class SFBottomSheetGridViewController: UIViewController, SFBottomSheetChildControllerProtocol {
-
+    
     fileprivate var viewModel: SFBottomSheetListViewModelProtocol!
     
     // MARK: - Outlets
-
+    
     @IBOutlet private weak var collectionView: UICollectionView!
     
     // MARK: - Properties
     
     private let cellIdentifier = "\(SFBottomSheetGridCollectionViewCell.self)"
-    @objc dynamic var bottomSheetAppearanceSizes: BottomSheetChildAppearanceSizes!
+    var bottomSheetAppearance: BottomSheetChildAppearance!
     var didRequestCloseAction: (() -> Void)?
     var defaultRowHeight: CGFloat = 200
     
@@ -38,9 +38,9 @@ class SFBottomSheetGridViewController: UIViewController, SFBottomSheetChildContr
         if initialContainerHeight == contentHeight {
             collectionView.isScrollEnabled = true
         }
-        bottomSheetAppearanceSizes = BottomSheetChildAppearanceSizes(containerHeight: initialContainerHeight,
-                                                                     minimumAvailableContainerHeight: initialContainerHeight * 0.3,
-                                                                     maximumAvailableHeightCoefficient: 0.7)
+        bottomSheetAppearance = BottomSheetChildAppearance(containerHeight: initialContainerHeight,
+                                                           minimumAvailableContainerHeight: initialContainerHeight * 0.3,
+                                                           maximumAvailableHeightCoefficient: 0.7)
     }
     
     private func setupCollectionView() {

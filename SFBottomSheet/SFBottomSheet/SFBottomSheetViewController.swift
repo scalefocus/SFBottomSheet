@@ -7,24 +7,10 @@
 
 import UIKit
 
-public class BottomSheetChildAppearanceSizes: NSObject {
+public protocol SFBottomSheetChildControllerProtocol where Self: UIViewController {
     
-    @objc dynamic var containerHeight: CGFloat
-    @objc dynamic var maximumAvailableHeightCoefficient: CGFloat
-    @objc dynamic var minimumAvailableContainerHeight: CGFloat
-    
-    init(containerHeight: CGFloat, minimumAvailableContainerHeight: CGFloat, maximumAvailableHeightCoefficient: CGFloat) {
-        self.containerHeight = containerHeight
-        self.minimumAvailableContainerHeight = minimumAvailableContainerHeight
-        self.maximumAvailableHeightCoefficient = maximumAvailableHeightCoefficient
-    }
-    
-}
-
-@objc public protocol SFBottomSheetChildControllerProtocol: NSObjectProtocol where Self: UIViewController {
-    
-    @objc dynamic var bottomSheetAppearanceSizes: BottomSheetChildAppearanceSizes! { get }
-    @objc dynamic var didRequestCloseAction: (() -> Void)? { get set }
+    var bottomSheetAppearance: BottomSheetChildAppearance! { get set }
+    var didRequestCloseAction: (() -> Void)? { get set }
     
 }
 
@@ -58,7 +44,7 @@ public class SFBottomSheetViewController: UIViewController {
     private var currentPositionTouched: CGPoint?
     private var maximumAvailableContainerHeight: CGFloat!
     private var minimumAvailableContainerHeight: CGFloat = .zero
-    @objc fileprivate var childViewController: SFBottomSheetChildControllerProtocol?
+    fileprivate var childViewController: SFBottomSheetChildControllerProtocol?
     fileprivate var configurator: SFBottomSheetConfigurable?
     fileprivate var didFinishWithoutSelection: (() -> Void)?
     
@@ -69,16 +55,15 @@ public class SFBottomSheetViewController: UIViewController {
         setupChildController()
         setupGestures()
         applyConfiguration()
-        token = observe(\.childViewController?.bottomSheetAppearanceSizes.containerHeight,
-                        options: [.old, .new]) { [weak self] object, change in
-            guard let strongSelf = self else { return }
-            strongSelf.updateLayoutBaseOn(childAppearance: strongSelf.childViewController?.bottomSheetAppearanceSizes)
+        
+        childViewController?.bottomSheetAppearance.updateHandler = { [weak self] childAppearance in
+            self?.updateLayoutBaseOn(childAppearance: childAppearance)
         }
     }
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        updateLayoutBaseOn(childAppearance: childViewController?.bottomSheetAppearanceSizes)
+        updateLayoutBaseOn(childAppearance: childViewController?.bottomSheetAppearance)
     }
     
     // MARK: - Methods
@@ -92,7 +77,7 @@ public class SFBottomSheetViewController: UIViewController {
         embedChildController()
     }
     
-    private func updateLayoutBaseOn(childAppearance: BottomSheetChildAppearanceSizes?) {
+    private func updateLayoutBaseOn(childAppearance: BottomSheetChildAppearance?) {
         guard let childAppearance = childAppearance else { return }
         contentView.alpha = 1
         maximumAvailableContainerHeight = view.frame.height * childAppearance.maximumAvailableHeightCoefficient
@@ -109,10 +94,10 @@ public class SFBottomSheetViewController: UIViewController {
         guard let configurator = configurator else { return }
         
         containerView.layer.cornerRadius = configurator.containerViewCornerRadius
-        childContainerLeadingConstraint.constant = configurator.childContainerLeadingDefaultConstraint
-        childContainerTrailingConstraint.constant = configurator.childContainerTrailingDefaulConstraint
+        childContainerLeadingConstraint.constant = configurator.containerLeadingDefaultConstraint
+        childContainerTrailingConstraint.constant = configurator.containerTrailingDefaulConstraint
         
-        contentView.backgroundColor = configurator.contentViewBackgroundColor
+        contentView.backgroundColor = configurator.backgroundColor
         
         draggableContainerHeightConstraint.constant = configurator.draggableContainerHeightConstraint
         draggableContainerBottomConstraint.constant = configurator.draggableContainerBottomConstraint
@@ -160,7 +145,7 @@ public class SFBottomSheetViewController: UIViewController {
     }
     
     @objc private func panAction(_ panGesture: UIPanGestureRecognizer) {
-        guard let childSizes = childViewController?.bottomSheetAppearanceSizes else { return }
+        guard let childSizes = childViewController?.bottomSheetAppearance else { return }
         switch panGesture.state {
         case .changed:
             let translation = panGesture.translation(in: view)
@@ -208,3 +193,4 @@ extension UIView {
         NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: container, attribute: .bottom, multiplier: 1.0, constant: 0).isActive = true
     }
 }
+
