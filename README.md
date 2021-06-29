@@ -142,6 +142,8 @@ _For more examples and usage, please refer to the [Wiki][wiki]._
     * Updated the calculation of a content size
 * 0.0.9
     * Updated .podspec
+* 0.0.10
+    * Updated .podspec
 
 ## Meta
 

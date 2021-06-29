@@ -9,25 +9,25 @@ import UIKit
 
 public struct BottomSheetChildAppearance {
     
-    var containerHeight: CGFloat {
+    public var containerHeight: CGFloat {
         didSet {
             updateHandler?(self)
         }
     }
     
-    var maximumAvailableHeightCoefficient: CGFloat {
+    public var maximumAvailableHeightCoefficient: CGFloat {
         didSet {
             updateHandler?(self)
         }
     }
     
-    var minimumAvailableContainerHeight: CGFloat {
+    public var minimumAvailableContainerHeight: CGFloat {
         didSet {
             updateHandler?(self)
         }
     }
     
-    var updateHandler: ((BottomSheetChildAppearance) -> Void)?
+    public var updateHandler: ((BottomSheetChildAppearance) -> Void)?
     
     public init(containerHeight: CGFloat, minimumAvailableContainerHeight: CGFloat, maximumAvailableHeightCoefficient: CGFloat) {
         self.containerHeight = containerHeight
