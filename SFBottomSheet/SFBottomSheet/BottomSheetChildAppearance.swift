@@ -29,7 +29,7 @@ public struct BottomSheetChildAppearance {
     
     var updateHandler: ((BottomSheetChildAppearance) -> Void)?
     
-    init(containerHeight: CGFloat, minimumAvailableContainerHeight: CGFloat, maximumAvailableHeightCoefficient: CGFloat) {
+    public init(containerHeight: CGFloat, minimumAvailableContainerHeight: CGFloat, maximumAvailableHeightCoefficient: CGFloat) {
         self.containerHeight = containerHeight
         self.minimumAvailableContainerHeight = minimumAvailableContainerHeight
         self.maximumAvailableHeightCoefficient = maximumAvailableHeightCoefficient
