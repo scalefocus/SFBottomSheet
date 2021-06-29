@@ -145,6 +145,8 @@ _For more examples and usage, please refer to the [Wiki][wiki]._
     * Updated .podspec and provide SFBottomSheetConfigurable public init 
 * 0.0.7
     * Fixing child trailing constraint by updating SFBottomSheetChildControllerProtocol
+* 0.0.8
+    * Updated the calculation of a content size
 
 ## Meta
 

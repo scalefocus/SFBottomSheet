@@ -18,7 +18,7 @@ protocol PopupErrorViewМodelProtocol {
     
 }
 
-@objc class PopupErrorViewController: UIViewController, SFBottomSheetChildControllerProtocol {
+class PopupErrorViewController: UIViewController, SFBottomSheetChildControllerProtocol {
     
     private var viewModel: PopupErrorViewМodelProtocol!
     
