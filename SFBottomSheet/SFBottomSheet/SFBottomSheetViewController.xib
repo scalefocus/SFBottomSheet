@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SFBottomSheetViewController" customModule="SFBottomSheet" customModuleProvider="target">
             <connections>
                 <outlet property="childContainerLeadingConstraint" destination="Ndn-Mo-8uG" id="ATR-Rg-x1I"/>
+                <outlet property="childContainerTrailingConstraint" destination="bx4-OY-BIF" id="L9z-8g-Q4K"/>
                 <outlet property="childContainerView" destination="LiR-UF-ohY" id="rry-57-jLd"/>
                 <outlet property="containerView" destination="aV3-ok-mXT" id="zGW-xb-xXR"/>
                 <outlet property="containerViewHeightConstraint" destination="9z0-dg-4Y6" id="kuC-g7-kQp"/>

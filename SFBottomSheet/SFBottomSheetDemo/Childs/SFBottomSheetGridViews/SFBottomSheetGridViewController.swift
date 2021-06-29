@@ -9,39 +9,40 @@ import UIKit
 
 class SFBottomSheetGridViewController: UIViewController, SFBottomSheetChildControllerProtocol {
     
-    weak var delegate: SFBottomSheetChildDelegate?
-      
     fileprivate var viewModel: SFBottomSheetListViewModelProtocol!
     
     // MARK: - Outlets
-
+    
     @IBOutlet private weak var collectionView: UICollectionView!
     
     // MARK: - Properties
     
     private let cellIdentifier = "\(SFBottomSheetGridCollectionViewCell.self)"
-    var defaultContainerHeight: CGFloat = .zero
+    lazy var bottomSheetAppearance = BottomSheetChildAppearance(containerHeight: 300,
+                                                                minimumAvailableContainerHeight: 300 * 0.3,
+                                                                maximumAvailableHeightCoefficient: 0.7)
+    var didRequestCloseAction: (() -> Void)?
     var defaultRowHeight: CGFloat = 200
-    var minimumAvailableContainerHeight: CGFloat {
-        return defaultContainerHeight * 0.3
-    }
-    var maximumAvailableHeightCoefficient: CGFloat = 0.7
-    var childContainerLeadingDefaultConstraint: CGFloat = 16
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupScene()
         setupCollectionView()
     }
     
-    func getContainerHeight(_ maximumAvailableContainerHeight: CGFloat) -> CGFloat {
+    // MARK: - Methods
+    
+    private func setupScene() {
         let contentHeight = defaultRowHeight + 50
-        let eligibleCellCounts = Int(maximumAvailableContainerHeight / defaultRowHeight)
+        let eligibleCellCounts = Int((UIScreen.main.bounds.height * 0.7) / defaultRowHeight)
         let eligibleContainerHeight = defaultRowHeight * CGFloat(eligibleCellCounts)
-        defaultContainerHeight = min(eligibleContainerHeight, contentHeight)
-        if defaultContainerHeight == contentHeight {
+        let initialContainerHeight = min(eligibleContainerHeight, contentHeight)
+        if initialContainerHeight == contentHeight {
             collectionView.isScrollEnabled = true
         }
-        return defaultContainerHeight
+        bottomSheetAppearance = BottomSheetChildAppearance(containerHeight: initialContainerHeight,
+                                                           minimumAvailableContainerHeight: initialContainerHeight * 0.3,
+                                                           maximumAvailableHeightCoefficient: 0.7)
     }
     
     private func setupCollectionView() {

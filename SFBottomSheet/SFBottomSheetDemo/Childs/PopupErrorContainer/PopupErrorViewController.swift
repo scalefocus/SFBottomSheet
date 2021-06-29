@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PopupErrorViewМodelProtocol {
-
+    
     var typeIcon: UIImage? { get }
     var errorTitle: String { get }
     var description: String { get }
@@ -18,10 +18,8 @@ protocol PopupErrorViewМodelProtocol {
     
 }
 
-class PopupErrorViewController: UIViewController, SFBottomSheetChildControllerProtocol {
+@objc class PopupErrorViewController: UIViewController, SFBottomSheetChildControllerProtocol {
     
-    weak var delegate: SFBottomSheetChildDelegate?
-
     private var viewModel: PopupErrorViewМodelProtocol!
     
     // MARK: - Outlets
@@ -42,15 +40,13 @@ class PopupErrorViewController: UIViewController, SFBottomSheetChildControllerPr
     
     // MARK: - Properties
     
-    var defaultContainerHeight: CGFloat = 300
-    var minimumAvailableContainerHeight: CGFloat = 100
-    var maximumAvailableHeightCoefficient: CGFloat = 0.8
-    var childContainerLeadingDefaultConstraint: CGFloat = 16
-    private var maximumHeight: CGFloat = .zero
+    var bottomSheetAppearance = BottomSheetChildAppearance(containerHeight: 300,
+                                                           minimumAvailableContainerHeight: 100,
+                                                           maximumAvailableHeightCoefficient: 0.85)
+    var didRequestCloseAction: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupMaximumHeight()
         setup()
         
         actionButton.addTarget(self, action: #selector(didTapActionButton), for: .touchUpInside)
@@ -58,21 +54,12 @@ class PopupErrorViewController: UIViewController, SFBottomSheetChildControllerPr
     
     // MARK: - Methods
     
-    func getContainerHeight(_ maximumAvailableContainerHeight: CGFloat) -> CGFloat {
-        defaultContainerHeight = min(maximumAvailableContainerHeight, defaultContainerHeight)
-        return defaultContainerHeight
-    }
-    
-    private func setupMaximumHeight() {
-        maximumHeight = UIScreen.main.bounds.size.height * maximumAvailableHeightCoefficient
-    }
-    
     private func setupDescriptionTextView() {
         scrollView.setNeedsLayout()
         scrollView.layoutIfNeeded()
         let scrollViewContentHeight = scrollView.contentSize.height + 50
-        
-        defaultContainerHeight = min(scrollViewContentHeight, maximumHeight)
+        let maximumHeight = UIScreen.main.bounds.size.height * bottomSheetAppearance.maximumAvailableHeightCoefficient
+        bottomSheetAppearance.containerHeight = min(scrollViewContentHeight, maximumHeight)
     }
     
     private func setup() {
@@ -91,7 +78,7 @@ class PopupErrorViewController: UIViewController, SFBottomSheetChildControllerPr
     
     @objc private func didTapActionButton(sender: UIButton) {
         if case .title = viewModel.actionButtonType {
-            delegate?.childDidRequestClose()
+            didRequestCloseAction?()
         }
         viewModel.didTapActionButton()
     }
@@ -99,7 +86,7 @@ class PopupErrorViewController: UIViewController, SFBottomSheetChildControllerPr
     // MARK: - Action
     
     @IBAction private func close(_ sender: Any) {
-        delegate?.childDidRequestClose()
+        didRequestCloseAction?()
     }
     
 }

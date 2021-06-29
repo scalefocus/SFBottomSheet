@@ -8,8 +8,6 @@
 import UIKit
 
 class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControllerProtocol {
-
-    weak var delegate: SFBottomSheetChildDelegate?
     private var viewModel: PopupErrorViewМodelProtocol!
     
     // MARK: - Outlets
@@ -38,17 +36,15 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
     
     // MARK: - Properties
     
-    var defaultContainerHeight: CGFloat = 200
-    var minimumAvailableContainerHeight: CGFloat = .zero
-    var maximumAvailableHeightCoefficient: CGFloat = 0.85
-    var childContainerLeadingDefaultConstraint: CGFloat = 16
-    private var initialContainerHeight: CGFloat = 200
-    private var maximumHeight: CGFloat = .zero
+    lazy var bottomSheetAppearance = BottomSheetChildAppearance(containerHeight: initialContainerHeight,
+                                                                minimumAvailableContainerHeight: 100,
+                                                                maximumAvailableHeightCoefficient: 0.85)
+    var didRequestCloseAction: (() -> Void)?
+    private let initialContainerHeight: CGFloat = 200
     private var isKeyboardVisible: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupMaximumHeight()
         setup()
         
         actionButton.addTarget(self, action: #selector(didTapActionButton), for: .touchUpInside)
@@ -62,14 +58,14 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
                                                name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
         
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(autohideGestureTapped(gestureRecognizer:)))
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(autoHideGestureTapped(gestureRecognizer:)))
         view.addGestureRecognizer(gesture)
     }
     
-    @objc private func autohideGestureTapped(gestureRecognizer: UIGestureRecognizer) {
+    @objc private func autoHideGestureTapped(gestureRecognizer: UIGestureRecognizer) {
         let location = gestureRecognizer.location(in: nil)
         let matchingViews = view.descendants()
-        .filter { $0.convert($0.bounds, to: nil).contains(location) }
+            .filter { $0.convert($0.bounds, to: nil).contains(location) }
         
         let textInputViews = matchingViews.filter { $0 is UITextView || $0 is UITextField }
         
@@ -86,8 +82,7 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
     
     @objc private func keyboardWillHide(notification: Notification) {
         isKeyboardVisible = false
-        defaultContainerHeight = initialContainerHeight
-        delegate?.childDidChangeHeight(with: defaultContainerHeight)
+        bottomSheetAppearance.containerHeight = initialContainerHeight
         UIView.animate(withDuration: 0.5) { [weak self] in
             self?.view.layoutIfNeeded()
         }
@@ -95,8 +90,7 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
     
     private func keyboardWillShowWithHeight(_ height: CGFloat) {
         guard !isKeyboardVisible else { return }
-        defaultContainerHeight += height
-        delegate?.childDidChangeHeight(with: defaultContainerHeight + height)
+        bottomSheetAppearance.containerHeight += height
         UIView.animate(withDuration: 0.5) { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.view.layoutIfNeeded()
@@ -106,15 +100,6 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
     }
     
     // MARK: - Methods
-    
-    func getContainerHeight(_ maximumAvailableContainerHeight: CGFloat) -> CGFloat {
-        defaultContainerHeight = min(maximumAvailableContainerHeight, defaultContainerHeight)
-        return defaultContainerHeight
-    }
-    
-    private func setupMaximumHeight() {
-        maximumHeight = UIScreen.main.bounds.size.height * maximumAvailableHeightCoefficient
-    }
     
     private func setup() {
         typeIconImageView.image = viewModel.typeIcon
@@ -130,7 +115,7 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
     
     @objc private func didTapActionButton(sender: UIButton) {
         if case .title = viewModel.actionButtonType {
-            delegate?.childDidRequestClose()
+            didRequestCloseAction?()
         }
         viewModel.didTapActionButton()
     }
@@ -138,7 +123,7 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
     // MARK: - Action
     
     @IBAction private func close(_ sender: Any) {
-        delegate?.childDidRequestClose()
+        didRequestCloseAction?()
     }
     
 }

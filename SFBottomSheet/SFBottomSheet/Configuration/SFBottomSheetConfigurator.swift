@@ -9,12 +9,12 @@ import UIKit
 
 public protocol SFBottomSheetConfigurable {
     
-    // MARK: Content
-    
-    var contentViewBackgroundColor: UIColor { get }
+    var backgroundColor: UIColor { get }
     
     // MARK: Container
     
+    var containerLeadingDefaultConstraint: CGFloat { get }
+    var containerTrailingDefaulConstraint: CGFloat { get }
     var containerViewCornerRadius: CGFloat { get }
     
     // MARK: Draggable
@@ -34,7 +34,12 @@ public struct SFBottomSheetConfigurator: SFBottomSheetConfigurable {
     
     // MARK: Content
     
-    public var contentViewBackgroundColor: UIColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+    public var backgroundColor: UIColor = UIColor(red: 0,
+                                                             green: 0,
+                                                             blue: 0,
+                                                             alpha: 0.4)
+    public var containerLeadingDefaultConstraint: CGFloat = 16
+    public var containerTrailingDefaulConstraint: CGFloat = 16
     
     // MARK: Container
     
@@ -50,4 +55,7 @@ public struct SFBottomSheetConfigurator: SFBottomSheetConfigurable {
     public var draggableAlpha: CGFloat = 1
     public var draggableCornerRadius: CGFloat = 2
     public var draggableMaskedCorners: CACornerMask = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+    
+    public init () {}
+    
 }
