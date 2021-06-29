@@ -18,7 +18,9 @@ class SFBottomSheetGridViewController: UIViewController, SFBottomSheetChildContr
     // MARK: - Properties
     
     private let cellIdentifier = "\(SFBottomSheetGridCollectionViewCell.self)"
-    var bottomSheetAppearance: BottomSheetChildAppearance!
+    lazy var bottomSheetAppearance = BottomSheetChildAppearance(containerHeight: 300,
+                                                                minimumAvailableContainerHeight: 300 * 0.3,
+                                                                maximumAvailableHeightCoefficient: 0.7)
     var didRequestCloseAction: (() -> Void)?
     var defaultRowHeight: CGFloat = 200
     

@@ -40,14 +40,13 @@ protocol PopupErrorViewМodelProtocol {
     
     // MARK: - Properties
     
-    var bottomSheetAppearance: BottomSheetChildAppearance!
+    var bottomSheetAppearance = BottomSheetChildAppearance(containerHeight: 300,
+                                                           minimumAvailableContainerHeight: 100,
+                                                           maximumAvailableHeightCoefficient: 0.85)
     var didRequestCloseAction: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bottomSheetAppearance = BottomSheetChildAppearance(containerHeight: 300,
-                                                           minimumAvailableContainerHeight: 100,
-                                                           maximumAvailableHeightCoefficient: 0.85)
         setup()
         
         actionButton.addTarget(self, action: #selector(didTapActionButton), for: .touchUpInside)

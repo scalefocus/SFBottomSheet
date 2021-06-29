@@ -9,7 +9,7 @@ import UIKit
 
 public protocol SFBottomSheetChildControllerProtocol where Self: UIViewController {
     
-    var bottomSheetAppearance: BottomSheetChildAppearance! { get set }
+    var bottomSheetAppearance: BottomSheetChildAppearance { get set }
     var didRequestCloseAction: (() -> Void)? { get set }
     
 }
@@ -55,10 +55,6 @@ public class SFBottomSheetViewController: UIViewController {
         setupChildController()
         setupGestures()
         applyConfiguration()
-        
-        childViewController?.bottomSheetAppearance.updateHandler = { [weak self] childAppearance in
-            self?.updateLayoutBaseOn(childAppearance: childAppearance)
-        }
     }
     
     public override func viewWillAppear(_ animated: Bool) {
@@ -69,12 +65,15 @@ public class SFBottomSheetViewController: UIViewController {
     // MARK: - Methods
     
     private func setupChildController() {
-        guard let childViewController = childViewController else { return }
-        childViewController.didRequestCloseAction = { [weak self] in
+        embedChildController()
+        
+        childViewController?.didRequestCloseAction = { [weak self] in
             self?.closeScene()
         }
         
-        embedChildController()
+        childViewController?.bottomSheetAppearance.updateHandler = { [weak self] childAppearance in
+            self?.updateLayoutBaseOn(childAppearance: childAppearance)
+        }
     }
     
     private func updateLayoutBaseOn(childAppearance: BottomSheetChildAppearance?) {

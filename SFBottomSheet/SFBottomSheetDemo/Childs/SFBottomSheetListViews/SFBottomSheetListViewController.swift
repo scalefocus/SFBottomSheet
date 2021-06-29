@@ -25,7 +25,9 @@ class SFBottomSheetListViewController: UIViewController, SFBottomSheetChildContr
     
     // MARK: - Properties
     
-    var bottomSheetAppearance: BottomSheetChildAppearance!
+    var bottomSheetAppearance = BottomSheetChildAppearance(containerHeight: 300,
+                                                           minimumAvailableContainerHeight: 300 * 0.2,
+                                                           maximumAvailableHeightCoefficient: 0.90)
     var didRequestCloseAction: (() -> Void)?
     
     override func viewDidLoad() {

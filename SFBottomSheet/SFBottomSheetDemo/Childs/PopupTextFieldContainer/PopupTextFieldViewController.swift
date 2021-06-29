@@ -8,7 +8,6 @@
 import UIKit
 
 class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControllerProtocol {
-    
     private var viewModel: PopupErrorViewМodelProtocol!
     
     // MARK: - Outlets
@@ -37,16 +36,15 @@ class PopupTextFieldViewController: UIViewController, SFBottomSheetChildControll
     
     // MARK: - Properties
     
-    var bottomSheetAppearance: BottomSheetChildAppearance!
+    lazy var bottomSheetAppearance = BottomSheetChildAppearance(containerHeight: initialContainerHeight,
+                                                                minimumAvailableContainerHeight: 100,
+                                                                maximumAvailableHeightCoefficient: 0.85)
     var didRequestCloseAction: (() -> Void)?
-    private var initialContainerHeight: CGFloat = 200
+    private let initialContainerHeight: CGFloat = 200
     private var isKeyboardVisible: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bottomSheetAppearance = BottomSheetChildAppearance(containerHeight: initialContainerHeight,
-                                                           minimumAvailableContainerHeight: 100,
-                                                           maximumAvailableHeightCoefficient: 0.85)
         setup()
         
         actionButton.addTarget(self, action: #selector(didTapActionButton), for: .touchUpInside)
