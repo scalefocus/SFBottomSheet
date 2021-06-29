@@ -38,11 +38,11 @@ public struct SFBottomSheetConfigurator: SFBottomSheetConfigurable {
                                                              green: 0,
                                                              blue: 0,
                                                              alpha: 0.4)
-    public var containerLeadingDefaultConstraint: CGFloat = 16
-    public var containerTrailingDefaulConstraint: CGFloat = 16
     
     // MARK: Container
     
+    public var containerLeadingDefaultConstraint: CGFloat = 16
+    public var containerTrailingDefaulConstraint: CGFloat = 16
     public var containerViewCornerRadius: CGFloat = 16
         
     // MARK: Draggable

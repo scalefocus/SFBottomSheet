@@ -24,23 +24,11 @@ import SFBottomSheet
 Each SFBottomSheet accepts a child view controller that must conform to ``SFBottomSheetChildControllerProtocol``. Through this protocol each child view controller describes how to be represented.
 
 ```swift
-public protocol SFBottomSheetChildControllerProtocol: UIViewController {
+public protocol SFBottomSheetChildControllerProtocol where Self: UIViewController {
     
-    var delegate: SFBottomSheetChildDelegate? { get set }
-    var defaultContainerHeight: CGFloat { get set }
-    var minimumAvailableContainerHeight: CGFloat { get }
-    var maximumAvailableHeightCoefficient: CGFloat { get }
-    var childContainerLeadingDefaultConstraint: CGFloat { get }
+    var bottomSheetAppearance: BottomSheetChildAppearance { get set }
+    var didRequestCloseAction: (() -> Void)? { get set }
     
-    func getContainerHeight(_ maximumAvailableContainerHeight: CGFloat) -> CGFloat
-
-}
-
-public protocol SFBottomSheetChildDelegate: class {
-    
-    func childDidChangeHeight(with height: CGFloat)
-    func childDidRequestClose()
-
 }
 ```
 
@@ -49,12 +37,12 @@ SFBottomSheet also accepts a custom configuration that must conform to ``SFBotto
 ```swift
 public protocol SFBottomSheetConfigurable {
     
-    // MARK: Content
-    
-    var contentViewBackgroundColor: UIColor { get }
+    var backgroundColor: UIColor { get }
     
     // MARK: Container
     
+    var containerLeadingDefaultConstraint: CGFloat { get }
+    var containerTrailingDefaulConstraint: CGFloat { get }
     var containerViewCornerRadius: CGFloat { get }
     
     // MARK: Draggable
@@ -73,27 +61,32 @@ public protocol SFBottomSheetConfigurable {
 **Attention**: If is not provided, the default one will be used.
 
 ```swift
-struct SFBottomSheetConfigurator: SFBottomSheetConfigurable {
+public struct SFBottomSheetConfigurator: SFBottomSheetConfigurable {
     
     // MARK: Content
     
-    var contentViewBackgroundColor: UIColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+    public var backgroundColor: UIColor = UIColor(red: 0,
+                                                             green: 0,
+                                                             blue: 0,
+                                                             alpha: 0.4)
+    public var containerLeadingDefaultConstraint: CGFloat = 16
+    public var containerTrailingDefaulConstraint: CGFloat = 16
     
     // MARK: Container
     
-    var containerViewCornerRadius: CGFloat = 16
+    public var containerViewCornerRadius: CGFloat = 16
         
     // MARK: Draggable
     
-    var draggableContainerHeightConstraint: CGFloat = 30
-    var draggableContainerBottomConstraint: CGFloat = 0
-    var draggableHeightConstraint: CGFloat = 5
-    var draggableWidthConstraint: CGFloat = 40
-    var draggableBackgroundColor: UIColor = .white
-    var draggableAlpha: CGFloat = 1
-    var draggableCornerRadius: CGFloat = 2
-    var draggableMaskedCorners: CACornerMask = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-
+    public var draggableContainerHeightConstraint: CGFloat = 30
+    public var draggableContainerBottomConstraint: CGFloat = 0
+    public var draggableHeightConstraint: CGFloat = 5
+    public var draggableWidthConstraint: CGFloat = 40
+    public var draggableBackgroundColor: UIColor = .white
+    public var draggableAlpha: CGFloat = 1
+    public var draggableCornerRadius: CGFloat = 2
+    public var draggableMaskedCorners: CACornerMask = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+    
 }
 ```
 
@@ -147,6 +140,8 @@ _For more examples and usage, please refer to the [Wiki][wiki]._
     * Fixing child trailing constraint by updating SFBottomSheetChildControllerProtocol
 * 0.0.8
     * Updated the calculation of a content size
+* 0.0.9
+    * Updated .podspec
 
 ## Meta
 
